@@ -1,0 +1,57 @@
+name: Release History Privacy Hardening
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/release-history-privacy-hardening.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  harden:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ScaleUPPeisov/vyron-releases
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Remove nonessential internal verification logs from public releases
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          remove_asset() {
+            tag="$1"; name="$2"
+            gh api "repos/$REPO/releases/tags/$tag" > /tmp/release.json
+            id="$(jq -r --arg n "$name" '.assets[] | select(.name==$n) | .id' /tmp/release.json)"
+            if [ -n "$id" ] && [ "$id" != "null" ]; then
+              gh api -X DELETE "repos/$REPO/releases/assets/$id"
+              echo "REMOVED=$tag/$name"
+            fi
+          }
+          remove_asset v2.1.15-rc.7 codesign-details.txt
+          remove_asset v2.1.15-rc.7 designated-requirement.txt
+          remove_asset v2.1.16-windows-x64 runtime-acceptance.txt
+          remove_asset v2.1.16-windows-x64 authenticode.txt
+
+      - name: Verify updater-critical historical assets remain
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          gh api "repos/$REPO/releases/tags/v2.1.15-rc.7" > /tmp/mac.json
+          gh api "repos/$REPO/releases/tags/v2.1.16-windows-x64" > /tmp/win.json
+          python3 - <<'PY'
+          import json
+          mac={x['name'] for x in json.load(open('/tmp/mac.json'))['assets']}
+          win={x['name'] for x in json.load(open('/tmp/win.json'))['assets']}
+          assert {'VYRON-2.1.15-rc.7-arm64.dmg','VYRON.app.tar.gz','VYRON.app.tar.gz.sig'} <= mac
+          assert {'codesign-details.txt','designated-requirement.txt'}.isdisjoint(mac)
+          assert {'VYRON_2.1.16_x64-setup.exe','VYRON_2.1.16_x64-setup.exe.sig'} <= win
+          assert {'runtime-acceptance.txt','authenticode.txt'}.isdisjoint(win)
+          print('HISTORICAL_UPDATER_ASSETS=PASS')
+          print('INTERNAL_VERIFICATION_LOGS_PUBLIC=0')
+          PY
