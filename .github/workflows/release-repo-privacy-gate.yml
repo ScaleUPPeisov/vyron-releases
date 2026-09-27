@@ -1,0 +1,62 @@
+name: Release Repo Privacy Gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  privacy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enforce release-only tracked content
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 - <<'PY'
+          import pathlib, re, subprocess, sys
+
+          files=subprocess.check_output(['git','ls-files'],text=True).splitlines()
+          allowed=[
+              re.compile(r'^README\.md$'),
+              re.compile(r'^SECURITY\.md$'),
+              re.compile(r'^updates/(latest|windows-latest|owner-preview)\.json$'),
+              re.compile(r'^\.github/workflows/[A-Za-z0-9._-]+\.ya?ml$'),
+          ]
+          for f in files:
+              if not any(p.match(f) for p in allowed):
+                  print('RELEASE_REPO_PRIVACY=FAIL:UNEXPECTED_TRACKED_FILE')
+                  sys.exit(1)
+
+          forbidden_patterns=[
+              re.compile(rb'ya29\.[A-Za-z0-9._~-]{20,}'),
+              re.compile(rb'1//[A-Za-z0-9._~-]{20,}'),
+              re.compile(rb'GOCSPX-[A-Za-z0-9_-]{20,}'),
+              re.compile(rb'AIza[0-9A-Za-z_-]{20,}'),
+              re.compile(rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
+              re.compile(rb'Glass City Lovers', re.I),
+              re.compile(rb'youtube\.com/channel/[A-Za-z0-9_-]+', re.I),
+              re.compile(rb'youtu\.be/[A-Za-z0-9_-]{6,}', re.I),
+              re.compile(rb'PHYSICAL_VIDEO_ID', re.I),
+              re.compile(rb'physical_video_id', re.I),
+              re.compile(rb'credentials\.json', re.I),
+          ]
+          for f in files:
+              p=pathlib.Path(f)
+              try: data=p.read_bytes()
+              except Exception: continue
+              if any(rx.search(data) for rx in forbidden_patterns):
+                  print('RELEASE_REPO_PRIVACY=FAIL:SENSITIVE_CONTENT')
+                  sys.exit(1)
+
+          print('RELEASE_REPO_PRIVACY=PASS')
+          print('SOURCE_CODE=0')
+          print('USER_DATABASES=0')
+          print('OAUTH_TOKENS=0')
+          print('CHANNEL_IDENTIFIERS=0')
+          PY
