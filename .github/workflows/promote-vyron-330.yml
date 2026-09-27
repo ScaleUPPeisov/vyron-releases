@@ -1,4 +1,4 @@
-name: Verify VYRON 3.3.0 Production
+name: Verify Immutable VYRON 3.3.0 Production
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ permissions:
   contents: read
 
 env:
-  REPO: ScaleUPPeisov/vyron-releases
+  TARGET_REPO: ScaleUPPeisov/vyron-releases
   TAG: v3.3.0
   MAC_DMG_SHA256: 76c096e4c7d0d1cf6802572e90b20ac9ea7d6d1c5dad189864cccf5ec4bf8bdd
   MAC_UPDATER_SHA256: 760c40e3b19931baecd553e7e13289492770d141a33879890a598d890f108381
@@ -16,36 +16,46 @@ env:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-    env:
-      GH_TOKEN: ${{ github.token }}
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Verify release-only production state
+      - name: Verify immutable public release and feeds
         shell: bash
         run: |
           set -Eeuo pipefail
-          gh api "repos/$REPO/releases/tags/$TAG" > /tmp/release.json
-          curl --fail --location --retry 5 "https://raw.githubusercontent.com/$REPO/main/updates/latest.json" -o /tmp/mac.json
-          curl --fail --location --retry 5 "https://raw.githubusercontent.com/$REPO/main/updates/windows-latest.json" -o /tmp/win.json
+          curl -fsSL "https://api.github.com/repos/$TARGET_REPO/releases/tags/$TAG" -o /tmp/release.json
           python3 - <<'PY'
-          import json,os
-          r=json.load(open('/tmp/release.json'))
-          assert r['tag_name']=='v3.3.0' and not r['draft'] and not r['prerelease']
-          assets={x['name']:x for x in r['assets']}
-          expected={
-            'VYRON-3.3.0-arm64.dmg':os.environ['MAC_DMG_SHA256'],
-            'VYRON.app.tar.gz':os.environ['MAC_UPDATER_SHA256'],
-            'VYRON_3.3.0_x64-setup.exe':os.environ['WIN_SHA256'],
+          import json
+          d=json.load(open('/tmp/release.json'))
+          assert d['tag_name']=='v3.3.0'
+          assert d['draft'] is False and d['prerelease'] is False
+          assets={x['name']:x for x in d['assets']}
+          required={
+            'VYRON-3.3.0-arm64.dmg',
+            'VYRON.app.tar.gz',
+            'VYRON.app.tar.gz.sig',
+            'VYRON_3.3.0_x64-setup.exe',
+            'VYRON_3.3.0_x64-setup.exe.sig',
           }
-          for name,digest in expected.items():
-              assert assets[name]['digest']=='sha256:'+digest,(name,assets[name].get('digest'),digest)
-          mac=json.load(open('/tmp/mac.json')); win=json.load(open('/tmp/win.json'))
-          assert mac['version']=='3.3.0' and win['version']=='3.3.0'
-          for d,key in [(mac,'darwin-aarch64'),(win,'windows-x86_64')]:
+          assert required <= set(assets)
+          print('IMMUTABLE_RELEASE_METADATA=PASS')
+          PY
+
+          curl -fL --retry 5 "https://github.com/$TARGET_REPO/releases/download/$TAG/VYRON-3.3.0-arm64.dmg" -o /tmp/mac.dmg
+          curl -fL --retry 5 "https://github.com/$TARGET_REPO/releases/download/$TAG/VYRON.app.tar.gz" -o /tmp/mac.tar.gz
+          curl -fL --retry 5 "https://github.com/$TARGET_REPO/releases/download/$TAG/VYRON_3.3.0_x64-setup.exe" -o /tmp/win.exe
+          test "$(sha256sum /tmp/mac.dmg | awk '{print $1}')" = "$MAC_DMG_SHA256"
+          test "$(sha256sum /tmp/mac.tar.gz | awk '{print $1}')" = "$MAC_UPDATER_SHA256"
+          test "$(sha256sum /tmp/win.exe | awk '{print $1}')" = "$WIN_SHA256"
+
+          curl -fsSL "https://raw.githubusercontent.com/$TARGET_REPO/main/updates/latest.json" -o /tmp/mac.json
+          curl -fsSL "https://raw.githubusercontent.com/$TARGET_REPO/main/updates/windows-latest.json" -o /tmp/win.json
+          python3 - <<'PY'
+          import json, os
+          target=os.environ['TARGET_REPO']
+          for path,key in [('/tmp/mac.json','darwin-aarch64'),('/tmp/win.json','windows-x86_64')]:
+              d=json.load(open(path))
+              assert d['version']=='3.3.0'
               u=d['platforms'][key]['url']
-              assert 'ScaleUPPeisov/vyron-releases/releases/download/v3.3.0/' in u
-              assert 'scaleup-dashboards' not in u
-          print('VYRON_3_3_0_PRODUCTION_VERIFY=PASS')
+              assert f'https://github.com/{target}/releases/download/v3.3.0/' in u
+          print('IMMUTABLE_PRODUCTION_FEEDS=PASS')
           PY
