@@ -1,293 +1,51 @@
-name: Promote VYRON 3.3.0 Production
+name: Verify VYRON 3.3.0 Production
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/promote-vyron-330.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
-
-concurrency:
-  group: promote-vyron-330-production
-  cancel-in-progress: false
+  contents: read
 
 env:
-  SOURCE_REPO: ScaleUPPeisov/scaleup-dashboards
-  TARGET_REPO: ScaleUPPeisov/vyron-releases
-  APPROVED_HEAD: a11a73b27d2c7642c21fbb49c0c1b782be1e7c1a
+  REPO: ScaleUPPeisov/vyron-releases
   TAG: v3.3.0
-  VERSION: '3.3.0'
-  PRIVACY_RUN_ID: '36314261923'
-  XPLAT_RUN_ID: '36314261935'
-  MAC_RUN_ID: '36314261962'
-  DUAL_RUN_ID: '36314261922'
-  MAC_ARTIFACT_ID: '10930038240'
-  WIN_ARTIFACT_ID: '10930616324'
-  MAC_ZIP_SHA256: 800eae18229a8dc7cb67e4216c2b5f14056bb8e338457661827e5cb3b7c32d92
-  WIN_ZIP_SHA256: 8270144752a458211ce24c47d43fb19c2f0521cbb3f0d590d72466296147d6e6
   MAC_DMG_SHA256: 76c096e4c7d0d1cf6802572e90b20ac9ea7d6d1c5dad189864cccf5ec4bf8bdd
   MAC_UPDATER_SHA256: 760c40e3b19931baecd553e7e13289492770d141a33879890a598d890f108381
   WIN_SHA256: 02769159baebb15f9fb06c271b1e1c70df0f1d1f517259ea40d0ff68d8961c5f
-  UPDATER_PUBLIC_KEY: dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEREODQ1NDdERTI1MEYxQzAKUldUQThWRGlmVlNFM1RHdW5WQnE2eG9BYTBnQlNmbUtmVU84UHJQMUNvZWZ4Qmo0L2hYcUd4UDEK
 
 jobs:
-  promote:
+  verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 10
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Verify release preconditions and exact GREEN runs
+      - name: Verify release-only production state
         shell: bash
         run: |
           set -Eeuo pipefail
-          python3 - <<'PY'
-          import json, os, urllib.request
-          src=os.environ['SOURCE_REPO']
-          head=os.environ['APPROVED_HEAD']
-          branch=json.load(urllib.request.urlopen(f'https://api.github.com/repos/{src}/branches/release/vyron-3.0.0'))
-          assert branch['commit']['sha']==head,(branch['commit']['sha'],head)
-          expected={
-            os.environ['PRIVACY_RUN_ID']:'VYRON Privacy Gate',
-            os.environ['XPLAT_RUN_ID']:'VYRON 3.3.0 Cross Platform Migration E2E',
-            os.environ['MAC_RUN_ID']:'VYRON 3.3.0 Migration Owner Preview Candidate',
-            os.environ['DUAL_RUN_ID']:'VYRON 3.3.0 Migration Dual Platform Gate',
-          }
-          for rid,name in expected.items():
-              d=json.load(urllib.request.urlopen(f'https://api.github.com/repos/{src}/actions/runs/{rid}'))
-              assert d['name']==name,(d['name'],name)
-              assert d['head_sha']==head,(d['head_sha'],head)
-              assert d['head_branch']=='release/vyron-3.0.0'
-              assert d['status']=='completed' and d['conclusion']=='success',(d['status'],d['conclusion'])
-              print(name+'=GREEN')
-          print('EXACT_SOURCE_HEAD=PASS')
-          PY
-          if gh release view "$TAG" --repo "$TARGET_REPO" >/dev/null 2>&1; then
-            echo 'BLOCKER=TARGET_V3_3_0_ALREADY_EXISTS'
-            exit 1
-          fi
-
-      - name: Verify exact artifact metadata
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          python3 - <<'PY'
-          import json, os, urllib.request
-          src=os.environ['SOURCE_REPO']; head=os.environ['APPROVED_HEAD']
-          checks=[
-            (os.environ['MAC_ARTIFACT_ID'],'VYRON-3.3.0-PHYSICAL-CANDIDATE-arm64',os.environ['MAC_ZIP_SHA256'],os.environ['MAC_RUN_ID']),
-            (os.environ['WIN_ARTIFACT_ID'],'vyron-3.3.0-migration-windows',os.environ['WIN_ZIP_SHA256'],os.environ['DUAL_RUN_ID']),
-          ]
-          for aid,name,digest,run_id in checks:
-              d=json.load(urllib.request.urlopen(f'https://api.github.com/repos/{src}/actions/artifacts/{aid}'))
-              assert d['name']==name,(d['name'],name)
-              assert d['expired'] is False
-              assert d['digest']=='sha256:'+digest,(d['digest'],digest)
-              wr=d['workflow_run']
-              assert str(wr['id'])==run_id,(wr['id'],run_id)
-              assert wr['head_sha']==head,(wr['head_sha'],head)
-              print(name+'=EXACT')
-          PY
-
-      - name: Download exact tested artifact ZIPs without rebuild
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          mkdir -p accepted/mac accepted/win stable remote
-          curl --fail --location --retry 5 'https://sdmntpritalynorth.oaiusercontent.com/files/00000000-7cac-8246-8e8b-0b9b8b584da8/raw?se=2026-09-27T11%3A42%3A08Z&sp=r&sv=2026-02-06&sr=b&scid=ec870e47-ba56-5021-a2a0-d8415450e8d4&skoid=a63e6f05-dc2f-4fa5-b0e3-b1cb9c0893bb&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-27T09%3A13%3A52Z&ske=2026-09-28T09%3A13%3A52Z&sks=b&skv=2026-02-06&sig=4VDThs3ijnjj8zU3kKmbanuj/SYjXmpeKadbOJRthug%3D' -o /tmp/mac.zip
-          curl --fail --location --retry 5 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-98d8-8210-aa30-9713c9cd5ea6/raw?se=2026-09-27T11%3A42%3A10Z&sp=r&sv=2026-02-06&sr=b&scid=48a8c4b3-f18f-506e-87fc-db0ef4fd8b8c&skoid=a63e6f05-dc2f-4fa5-b0e3-b1cb9c0893bb&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-27T09%3A13%3A44Z&ske=2026-09-28T09%3A13%3A44Z&sks=b&skv=2026-02-06&sig=CuBM%2B3Wvu2gY1Dq1TCQPzorih0Fl9I8yxnFigvc5w18%3D' -o /tmp/win.zip
-          echo "$MAC_ZIP_SHA256  /tmp/mac.zip" | sha256sum -c -
-          echo "$WIN_ZIP_SHA256  /tmp/win.zip" | sha256sum -c -
-          unzip -q /tmp/mac.zip -d accepted/mac
-          unzip -q /tmp/win.zip -d accepted/win
-
-      - name: Verify accepted bytes, identity, continuity and signatures
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          MAC_DMG='accepted/mac/VYRON-3.3.0-PHYSICAL-CANDIDATE-arm64.dmg'
-          MAC_UPDATER='accepted/mac/VYRON-3.3.0-PHYSICAL-CANDIDATE.app.tar.gz'
-          MAC_SIG='accepted/mac/VYRON-3.3.0-PHYSICAL-CANDIDATE.app.tar.gz.sig'
-          WIN_EXE='accepted/win/VYRON-3.3.0-windows-x64-gate.exe'
-          WIN_SIG='accepted/win/VYRON-3.3.0-windows-x64-gate.exe.sig'
-
-          test "$(sha256sum "$MAC_DMG" | awk '{print $1}')" = "$MAC_DMG_SHA256"
-          test "$(sha256sum "$MAC_UPDATER" | awk '{print $1}')" = "$MAC_UPDATER_SHA256"
-          test "$(sha256sum "$WIN_EXE" | awk '{print $1}')" = "$WIN_SHA256"
-
-          test "$(tr -d '\r\n ' < accepted/mac/commit-sha.txt)" = "$APPROVED_HEAD"
-          grep -F 'WINDOWS_UPDATE_2_1_16_TO_3_3_0=PASS' accepted/win/gate-windows.txt
-          grep -F 'WINDOWS_UPDATE_AFTER_MIGRATION_STATE=PASS' accepted/win/gate-windows.txt
-          grep -F 'WINDOWS_RESTART_AFTER_MIGRATION=PASS' accepted/win/gate-windows.txt
-          grep -F 'WINDOWS_PHYSICAL_LAUNCH=PASS' accepted/win/gate-windows.txt
-          grep -F 'WINDOWS_SPECIAL_PATH=PASS' accepted/win/gate-windows.txt
-          grep -F 'deleted_channels=0' accepted/win/gate-windows.txt
-          grep -F 'deleted_accounts=0' accepted/win/gate-windows.txt
-          grep -F 'head=a11a73b27d2c7642c21fbb49c0c1b782be1e7c1a' accepted/win/gate-windows.txt
-          grep -F 'version=3.3.0' accepted/win/gate-windows.txt
-
-          mkdir -p /tmp/app && tar -xzf "$MAC_UPDATER" -C /tmp/app
-          python3 - <<'PY'
-          import plistlib
-          d=plistlib.load(open('/tmp/app/VYRON.app/Contents/Info.plist','rb'))
-          assert d['CFBundleIdentifier']=='studio.channelflow.desktop'
-          assert d['CFBundleShortVersionString']=='3.3.0'
-          assert d['CFBundleVersion']=='3.3.0'
-          print('MAC_APP_IDENTITY=PASS')
-          PY
-
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq minisign
-          python3 - <<'PY'
-          import base64,os
-          from pathlib import Path
-          def env(raw:bytes)->bytes:
-              x=raw.strip()
-              try:
-                  y=base64.b64decode(x,validate=True)
-                  if y.startswith(b'untrusted comment:'): return y
-              except Exception: pass
-              return x+b'\n'
-          Path('/tmp/vyron.pub').write_bytes(env(os.environ['UPDATER_PUBLIC_KEY'].encode()))
-          Path('/tmp/mac.sig').write_bytes(env(Path('accepted/mac/VYRON-3.3.0-PHYSICAL-CANDIDATE.app.tar.gz.sig').read_bytes()))
-          Path('/tmp/win.sig').write_bytes(env(Path('accepted/win/VYRON-3.3.0-windows-x64-gate.exe.sig').read_bytes()))
-          PY
-          minisign -Vm "$MAC_UPDATER" -x /tmp/mac.sig -p /tmp/vyron.pub
-          minisign -Vm "$WIN_EXE" -x /tmp/win.sig -p /tmp/vyron.pub
-          echo 'ACCEPTED_ARTIFACTS_REVERIFIED=PASS'
-
-      - name: Prepare production assets and sanitized manifests
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          cp accepted/mac/VYRON-3.3.0-PHYSICAL-CANDIDATE-arm64.dmg stable/VYRON-3.3.0-arm64.dmg
-          cp accepted/mac/VYRON-3.3.0-PHYSICAL-CANDIDATE.app.tar.gz stable/VYRON.app.tar.gz
-          cp accepted/mac/VYRON-3.3.0-PHYSICAL-CANDIDATE.app.tar.gz.sig stable/VYRON.app.tar.gz.sig
-          cp accepted/mac/codesign-details.txt stable/codesign-details.txt
-          cp accepted/mac/designated-requirement.txt stable/designated-requirement.txt
-          cp accepted/win/VYRON-3.3.0-windows-x64-gate.exe stable/VYRON_3.3.0_x64-setup.exe
-          cp accepted/win/VYRON-3.3.0-windows-x64-gate.exe.sig stable/VYRON_3.3.0_x64-setup.exe.sig
-          cp accepted/win/gate-windows.txt stable/windows-physical-acceptance.txt
-          printf '%s  %s\n' "$MAC_DMG_SHA256" 'VYRON-3.3.0-arm64.dmg' > stable/VYRON-3.3.0-arm64.dmg.sha256
-          printf '%s  %s\n' "$MAC_UPDATER_SHA256" 'VYRON.app.tar.gz' > stable/VYRON.app.tar.gz.sha256
-          printf '%s  %s\n' "$WIN_SHA256" 'VYRON_3.3.0_x64-setup.exe' > stable/VYRON_3.3.0_x64-setup.exe.sha256
-
-          export PUB_DATE="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          python3 - <<'PY'
-          import json, os
-          from pathlib import Path
-          target=os.environ['TARGET_REPO']; tag=os.environ['TAG']
-          notes=(
-            'VYRON 3.3.0 — secure Windows ↔ macOS migration; Google/YouTube profiles preserved; '
-            'merge-safe duplicate-resistant imports; OAuth and Google Cloud Project continuity; '
-            'cross-platform folder remapping; Windows update continuity; rollback/recovery protection; '
-            'stability and regression fixes.'
-          )
-          latest={
-            'version':'3.3.0','notes':notes,'pub_date':os.environ['PUB_DATE'],
-            'platforms':{'darwin-aarch64':{
-              'url':f'https://github.com/{target}/releases/download/{tag}/VYRON.app.tar.gz',
-              'signature':Path('stable/VYRON.app.tar.gz.sig').read_text().strip()
-            }}
-          }
-          windows={
-            'version':'3.3.0','notes':notes,'pub_date':os.environ['PUB_DATE'],
-            'platforms':{'windows-x86_64':{
-              'url':f'https://github.com/{target}/releases/download/{tag}/VYRON_3.3.0_x64-setup.exe',
-              'signature':Path('stable/VYRON_3.3.0_x64-setup.exe.sig').read_text().strip()
-            }}
-          }
-          Path('updates/latest.json').write_text(json.dumps(latest,ensure_ascii=False,indent=2)+'\n')
-          Path('updates/windows-latest.json').write_text(json.dumps(windows,ensure_ascii=False,indent=2)+'\n')
-          for p in ['updates/latest.json','updates/windows-latest.json']:
-              raw=Path(p).read_text()
-              assert 'ScaleUPPeisov/scaleup-dashboards' not in raw
-              assert 'ScaleUPPeisov/vyron-releases/releases/download/v3.3.0/' in raw
-          print('PRODUCTION_MANIFESTS=READY')
-          PY
-
-      - name: Publish release-only v3.3.0
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          cat > /tmp/release-notes.md <<'EOF'
-          ## VYRON 3.3.0
-
-          - Secure Windows ↔ macOS migration
-          - Google/YouTube profiles preserved during migration
-          - Safe merge without deleting existing channels
-          - Duplicate-safe repeated imports
-          - OAuth/credential continuity
-          - Google Cloud Project mapping preservation
-          - Cross-platform folder remapping
-          - Improved Windows update continuity
-          - Migration rollback/recovery protection
-          - Stability and regression fixes
-          EOF
-          gh release create "$TAG"             --repo "$TARGET_REPO"             --target main             --title 'VYRON 3.3.0'             --notes-file /tmp/release-notes.md             stable/VYRON-3.3.0-arm64.dmg             stable/VYRON-3.3.0-arm64.dmg.sha256             stable/VYRON.app.tar.gz             stable/VYRON.app.tar.gz.sha256             stable/VYRON.app.tar.gz.sig             stable/VYRON_3.3.0_x64-setup.exe             stable/VYRON_3.3.0_x64-setup.exe.sha256             stable/VYRON_3.3.0_x64-setup.exe.sig             stable/codesign-details.txt             stable/designated-requirement.txt             stable/windows-physical-acceptance.txt
-          echo 'VYRON_3_3_0_RELEASE=PUBLISHED'
-
-      - name: Download public release assets back and verify exact bytes
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          gh release download "$TAG" --repo "$TARGET_REPO" --dir remote             --pattern 'VYRON-3.3.0-arm64.dmg'             --pattern 'VYRON.app.tar.gz'             --pattern 'VYRON.app.tar.gz.sig'             --pattern 'VYRON_3.3.0_x64-setup.exe'             --pattern 'VYRON_3.3.0_x64-setup.exe.sig'
-          test "$(sha256sum remote/VYRON-3.3.0-arm64.dmg | awk '{print $1}')" = "$MAC_DMG_SHA256"
-          test "$(sha256sum remote/VYRON.app.tar.gz | awk '{print $1}')" = "$MAC_UPDATER_SHA256"
-          test "$(sha256sum remote/VYRON_3.3.0_x64-setup.exe | awk '{print $1}')" = "$WIN_SHA256"
-          cp stable/VYRON.app.tar.gz.sig /tmp/mac-remote.sig
-          cp stable/VYRON_3.3.0_x64-setup.exe.sig /tmp/win-remote.sig
-          python3 - <<'PY'
-          import base64,os
-          from pathlib import Path
-          def env(raw:bytes)->bytes:
-              x=raw.strip()
-              try:
-                  y=base64.b64decode(x,validate=True)
-                  if y.startswith(b'untrusted comment:'): return y
-              except Exception: pass
-              return x+b'\n'
-          Path('/tmp/mac-remote.sig').write_bytes(env(Path('/tmp/mac-remote.sig').read_bytes()))
-          Path('/tmp/win-remote.sig').write_bytes(env(Path('/tmp/win-remote.sig').read_bytes()))
-          PY
-          minisign -Vm remote/VYRON.app.tar.gz -x /tmp/mac-remote.sig -p /tmp/vyron.pub
-          minisign -Vm remote/VYRON_3.3.0_x64-setup.exe -x /tmp/win-remote.sig -p /tmp/vyron.pub
-          echo 'REMOTE_ARTIFACTS_EXACT=PASS'
-
-      - name: Promote both release-only updater feeds
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add updates/latest.json updates/windows-latest.json
-          git commit -m 'release: promote VYRON 3.3.0 updater feeds'
-          git push origin HEAD:main
-          echo 'RELEASE_ONLY_FEEDS=PROMOTED'
-
-      - name: Anonymous public verification
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          curl --fail --location --retry 8 --retry-delay 2             "https://raw.githubusercontent.com/$TARGET_REPO/main/updates/latest.json?run=$GITHUB_RUN_ID" -o /tmp/latest.json
-          curl --fail --location --retry 8 --retry-delay 2             "https://raw.githubusercontent.com/$TARGET_REPO/main/updates/windows-latest.json?run=$GITHUB_RUN_ID" -o /tmp/windows.json
+          gh api "repos/$REPO/releases/tags/$TAG" > /tmp/release.json
+          curl --fail --location --retry 5 "https://raw.githubusercontent.com/$REPO/main/updates/latest.json" -o /tmp/mac.json
+          curl --fail --location --retry 5 "https://raw.githubusercontent.com/$REPO/main/updates/windows-latest.json" -o /tmp/win.json
           python3 - <<'PY'
           import json,os
-          target=os.environ['TARGET_REPO']
-          for p,key in [('/tmp/latest.json','darwin-aarch64'),('/tmp/windows.json','windows-x86_64')]:
-              d=json.load(open(p))
-              assert d['version']=='3.3.0'
+          r=json.load(open('/tmp/release.json'))
+          assert r['tag_name']=='v3.3.0' and not r['draft'] and not r['prerelease']
+          assets={x['name']:x for x in r['assets']}
+          expected={
+            'VYRON-3.3.0-arm64.dmg':os.environ['MAC_DMG_SHA256'],
+            'VYRON.app.tar.gz':os.environ['MAC_UPDATER_SHA256'],
+            'VYRON_3.3.0_x64-setup.exe':os.environ['WIN_SHA256'],
+          }
+          for name,digest in expected.items():
+              assert assets[name]['digest']=='sha256:'+digest,(name,assets[name].get('digest'),digest)
+          mac=json.load(open('/tmp/mac.json')); win=json.load(open('/tmp/win.json'))
+          assert mac['version']=='3.3.0' and win['version']=='3.3.0'
+          for d,key in [(mac,'darwin-aarch64'),(win,'windows-x86_64')]:
               u=d['platforms'][key]['url']
-              assert f'https://github.com/{target}/releases/download/v3.3.0/' in u,u
-          print('ANONYMOUS_PUBLIC_FEEDS=PASS')
+              assert 'ScaleUPPeisov/vyron-releases/releases/download/v3.3.0/' in u
+              assert 'scaleup-dashboards' not in u
+          print('VYRON_3_3_0_PRODUCTION_VERIFY=PASS')
           PY
-          curl --fail --location --retry 5             "https://github.com/$TARGET_REPO/releases/download/$TAG/VYRON.app.tar.gz" -o /tmp/public-mac.tar.gz
-          curl --fail --location --retry 5             "https://github.com/$TARGET_REPO/releases/download/$TAG/VYRON_3.3.0_x64-setup.exe" -o /tmp/public-win.exe
-          test "$(sha256sum /tmp/public-mac.tar.gz | awk '{print $1}')" = "$MAC_UPDATER_SHA256"
-          test "$(sha256sum /tmp/public-win.exe | awk '{print $1}')" = "$WIN_SHA256"
-          echo 'ANONYMOUS_PUBLIC_DOWNLOADS=PASS'
