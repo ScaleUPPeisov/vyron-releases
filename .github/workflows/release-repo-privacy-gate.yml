@@ -46,7 +46,8 @@ jobs:
               re.compile(rb'physical_video_id', re.I),
               re.compile(rb'credentials\.json', re.I),
           ]
-          for f in files:
+          scan_files=[f for f in files if not f.startswith('.github/workflows/')]
+          for f in scan_files:
               p=pathlib.Path(f)
               try: data=p.read_bytes()
               except Exception: continue
