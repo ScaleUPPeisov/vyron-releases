@@ -1,11 +1,11 @@
 {
-  "version": "3.3.1",
-  "notes": "VYRON 3.3.1 — OAuth/connectivity/quota hotfix; connected count corrected; READY state synchronized; per-Google-Project statistics quota isolation; existing profiles and channels preserved.",
-  "pub_date": "2026-09-27T13:45:51Z",
+  "version": "3.3.2",
+  "notes": "VYRON 3.3.2 — Windows OAuth launcher hotfix; cmd.exe removed from OAuth browser launch; existing channels, OAuth profiles and local data preserved.",
+  "pub_date": "2026-09-27T15:37:51Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v3.3.1/VYRON_3.3.1_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1huRlhzTXVNWiswcXJ0VnBEbm9FWUVWc09vek1NYkxRcWFhaGRnWkxFazlFQWxHZGdQZmtqOWJEK2dLSE9pSmZuSnFmdUxncVVYbkRwOU5Kdi9aN0FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNTE0NjQ1CWZpbGU6VllST05fMy4zLjFfeDY0LXNldHVwLmV4ZQp5YmJmaUZ4MTF0KzhBeVY5VEJadTIvaVExcmFJalkwZXozU2x5VHJUcFlMWFRkY3JMMWhadElLUDh6b3EraUtURVlmMmhqRmxLVDlzQmhubFNHdFVCUT09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v3.3.2/VYRON_3.3.2_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1VvZFlaUk5LUGJsTW1ZWit3MmFYT1ZGbDZDdm5udDNsUEJEOTNIV1ZiOStOcFlMdlZnS1pld1NGQkJ5TFFKY3RaUjF0S1FzYlpTSnJWOU8wVXRlVlFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNTIyODMzCWZpbGU6VllST05fMy4zLjJfeDY0LXNldHVwLmV4ZQo5M3dsOXliZFpCNFE5UGhxc3haMjVObWhZdjdSbWN0Tng0SU1tR3ZqMTU2bU12SUJRbytrVVo0M24wb0VaZFlzWGJHd1ZyTlYzZlgwWTd6L0dBNXlEdz09Cg=="
     }
   }
 }
