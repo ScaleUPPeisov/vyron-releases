@@ -1,0 +1,178 @@
+name: Promote VYRON 3.3.0 Release Mirror
+
+on:
+  workflow_dispatch:
+    inputs:
+      approved_head:
+        description: Exact GREEN VYRON 3.3.0 source HEAD
+        required: true
+        type: string
+      confirmation:
+        description: Type PROMOTE_VYRON_3_3_0 exactly
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: promote-vyron-330-release-mirror
+  cancel-in-progress: false
+
+env:
+  SOURCE_REPO: ScaleUPPeisov/scaleup-dashboards
+  TARGET_REPO: ScaleUPPeisov/vyron-releases
+  TAG: v3.3.0
+  VERSION: '3.3.0'
+  UPDATER_PUBLIC_KEY: dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEREODQ1NDdERTI1MEYxQzAKUldUQThWRGlmVlNFM1RHdW5WQnE2eG9BYTBnQlNmbUtmVU84UHJQMUNvZWZ4Qmo0L2hYcUd4UDEK
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+      APPROVED_HEAD: ${{ inputs.approved_head }}
+      CONFIRMATION: ${{ inputs.confirmation }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate explicit promotion approval
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test "$CONFIRMATION" = 'PROMOTE_VYRON_3_3_0'
+          test -n "$APPROVED_HEAD"
+          echo 'EXPLICIT_MIRROR_PROMOTION_APPROVAL=PASS'
+
+      - name: Verify immutable source release
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          curl --fail --location --retry 3 "https://api.github.com/repos/$SOURCE_REPO/releases/tags/$TAG" -o /tmp/source-release.json
+          python3 - <<'PY'
+          import json,os
+          d=json.load(open('/tmp/source-release.json'))
+          assert d['tag_name']=='v3.3.0'
+          assert d['draft'] is False and d['prerelease'] is False
+          assert d['target_commitish']==os.environ['APPROVED_HEAD'],(d['target_commitish'],os.environ['APPROVED_HEAD'])
+          required={
+            'VYRON-3.3.0-arm64.dmg','VYRON-3.3.0-arm64.dmg.sha256',
+            'VYRON.app.tar.gz','VYRON.app.tar.gz.sha256','VYRON.app.tar.gz.sig',
+            'VYRON_3.3.0_x64-setup.exe','VYRON_3.3.0_x64-setup.exe.sha256','VYRON_3.3.0_x64-setup.exe.sig',
+            'codesign-details.txt','designated-requirement.txt','windows-physical-acceptance.txt',
+            'latest.json','windows-latest.json'
+          }
+          assets={x['name']:x for x in d['assets']}
+          assert required <= set(assets),required-set(assets)
+          assert all(assets[n]['size']>0 for n in required)
+          print('SOURCE_RELEASE=VERIFIED')
+          PY
+
+      - name: Download exact source assets
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p mirror
+          base="https://github.com/$SOURCE_REPO/releases/download/$TAG"
+          for name in             VYRON-3.3.0-arm64.dmg             VYRON-3.3.0-arm64.dmg.sha256             VYRON.app.tar.gz             VYRON.app.tar.gz.sha256             VYRON.app.tar.gz.sig             VYRON_3.3.0_x64-setup.exe             VYRON_3.3.0_x64-setup.exe.sha256             VYRON_3.3.0_x64-setup.exe.sig             codesign-details.txt             designated-requirement.txt             windows-physical-acceptance.txt             latest.json             windows-latest.json
+          do
+            curl --fail --location --retry 3 "$base/$name" --output "mirror/$name"
+            test -s "mirror/$name"
+          done
+
+      - name: Verify hashes and updater signatures before mirror
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test "$(sha256sum mirror/VYRON-3.3.0-arm64.dmg | awk '{print $1}')" = "$(awk '{print $1}' mirror/VYRON-3.3.0-arm64.dmg.sha256)"
+          test "$(sha256sum mirror/VYRON.app.tar.gz | awk '{print $1}')" = "$(awk '{print $1}' mirror/VYRON.app.tar.gz.sha256)"
+          test "$(sha256sum mirror/VYRON_3.3.0_x64-setup.exe | awk '{print $1}')" = "$(awk '{print $1}' mirror/VYRON_3.3.0_x64-setup.exe.sha256)"
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq minisign
+          python3 - <<'PY'
+          import base64,os
+          from pathlib import Path
+          def envelope(raw:bytes)->bytes:
+              x=raw.strip()
+              try:
+                  y=base64.b64decode(x,validate=True)
+                  if y.startswith(b'untrusted comment:'): return y
+              except Exception: pass
+              return x+b'\n'
+          Path('/tmp/vyron.pub').write_bytes(envelope(os.environ['UPDATER_PUBLIC_KEY'].encode()))
+          Path('/tmp/mac.sig').write_bytes(envelope(Path('mirror/VYRON.app.tar.gz.sig').read_bytes()))
+          Path('/tmp/win.sig').write_bytes(envelope(Path('mirror/VYRON_3.3.0_x64-setup.exe.sig').read_bytes()))
+          PY
+          minisign -Vm mirror/VYRON.app.tar.gz -x /tmp/mac.sig -p /tmp/vyron.pub
+          minisign -Vm mirror/VYRON_3.3.0_x64-setup.exe -x /tmp/win.sig -p /tmp/vyron.pub
+          grep -F 'WINDOWS_UPDATE_2_1_16_TO_3_3_0=PASS' mirror/windows-physical-acceptance.txt
+          grep -F 'WINDOWS_RESTART_AFTER_MIGRATION=PASS' mirror/windows-physical-acceptance.txt
+          echo 'MIRROR_INPUT_SIGNATURES=PASS'
+
+      - name: Rewrite updater manifests to release-only repository
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p updates
+          sed 's#ScaleUPPeisov/scaleup-dashboards#ScaleUPPeisov/vyron-releases#g' mirror/latest.json > updates/latest.json
+          sed 's#ScaleUPPeisov/scaleup-dashboards#ScaleUPPeisov/vyron-releases#g' mirror/windows-latest.json > updates/windows-latest.json
+          python3 - <<'PY'
+          import json
+          for p in ['updates/latest.json','updates/windows-latest.json']:
+              d=json.load(open(p))
+              assert d['version']=='3.3.0'
+              raw=open(p).read()
+              assert 'ScaleUPPeisov/scaleup-dashboards' not in raw
+              assert 'ScaleUPPeisov/vyron-releases' in raw
+          assert 'darwin-aarch64' in json.load(open('updates/latest.json'))['platforms']
+          assert 'windows-x86_64' in json.load(open('updates/windows-latest.json'))['platforms']
+          print('RELEASE_ONLY_MANIFESTS=PASS')
+          PY
+
+      - name: Publish immutable release-only v3.3.0
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          if gh release view "$TAG" --repo "$TARGET_REPO" >/dev/null 2>&1; then
+            echo 'BLOCKER=TARGET_V3_3_0_ALREADY_EXISTS'
+            exit 1
+          fi
+          gh release create "$TAG"             mirror/VYRON-3.3.0-arm64.dmg             mirror/VYRON-3.3.0-arm64.dmg.sha256             mirror/VYRON.app.tar.gz             mirror/VYRON.app.tar.gz.sha256             mirror/VYRON.app.tar.gz.sig             mirror/VYRON_3.3.0_x64-setup.exe             mirror/VYRON_3.3.0_x64-setup.exe.sha256             mirror/VYRON_3.3.0_x64-setup.exe.sig             mirror/codesign-details.txt             mirror/designated-requirement.txt             mirror/windows-physical-acceptance.txt             updates/latest.json             updates/windows-latest.json             --repo "$TARGET_REPO"             --title 'VYRON 3.3.0'             --notes 'Release-only mirror of the exact physically accepted VYRON 3.3.0 Windows and macOS artifacts. No source code, OAuth tokens, channel identifiers or user data.'
+          echo 'RELEASE_ONLY_V3_3_0=PUBLISHED'
+
+      - name: Promote both updater feeds
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add updates/latest.json updates/windows-latest.json
+          git commit -m 'release: promote VYRON 3.3.0 updater feeds'
+          git push origin HEAD:main
+          echo 'MACOS_FEED_3_3_0=PROMOTED'
+          echo 'WINDOWS_FEED_3_3_0=PROMOTED'
+
+      - name: Verify public release and feeds
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          gh api "repos/$TARGET_REPO/releases/tags/$TAG" >/tmp/target-release.json
+          python3 - <<'PY'
+          import json
+          d=json.load(open('/tmp/target-release.json'))
+          assert d['tag_name']=='v3.3.0'
+          assert d['draft'] is False and d['prerelease'] is False
+          required={'VYRON.app.tar.gz','VYRON.app.tar.gz.sig','VYRON_3.3.0_x64-setup.exe','VYRON_3.3.0_x64-setup.exe.sig'}
+          assets={x['name']:x for x in d['assets']}
+          assert required <= set(assets)
+          assert all(assets[n]['size']>0 for n in required)
+          print('PUBLIC_RELEASE_ASSETS=PASS')
+          PY
+          curl --fail --location --retry 3 "https://raw.githubusercontent.com/$TARGET_REPO/main/updates/latest.json" -o /tmp/latest.json
+          curl --fail --location --retry 3 "https://raw.githubusercontent.com/$TARGET_REPO/main/updates/windows-latest.json" -o /tmp/windows.json
+          test "$(python3 -c 'import json;print(json.load(open("/tmp/latest.json"))["version"])')" = '3.3.0'
+          test "$(python3 -c 'import json;print(json.load(open("/tmp/windows.json"))["version"])')" = '3.3.0'
+          grep -F "$TARGET_REPO/releases/download/v3.3.0/" /tmp/latest.json
+          grep -F "$TARGET_REPO/releases/download/v3.3.0/" /tmp/windows.json
+          echo 'VYRON_3_3_0_PUBLIC_UPDATER=PROMOTED'
