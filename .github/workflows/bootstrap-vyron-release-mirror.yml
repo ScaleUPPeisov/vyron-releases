@@ -1,0 +1,123 @@
+name: Bootstrap VYRON public release mirror
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/bootstrap-vyron-release-mirror.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bootstrap-vyron-release-mirror
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_REPO: ScaleUPPeisov/scaleup-dashboards
+      TARGET_REPO: ScaleUPPeisov/vyron-releases
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Mirror current macOS updater release
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          TAG='v2.1.15-rc.7'
+          if ! gh release view "$TAG" --repo "$TARGET_REPO" >/dev/null 2>&1; then
+            mkdir -p mirror/macos
+            base="https://github.com/$SOURCE_REPO/releases/download/$TAG"
+            for name in               codesign-details.txt               designated-requirement.txt               VYRON-2.1.15-rc.7-arm64.dmg               VYRON-2.1.15-rc.7-arm64.dmg.sha256               VYRON.app.tar.gz               VYRON.app.tar.gz.sha256               VYRON.app.tar.gz.sig
+            do
+              curl --fail --location --retry 3 "$base/$name" --output "mirror/macos/$name"
+              test -s "mirror/macos/$name"
+            done
+            gh release create "$TAG" mirror/macos/*               --repo "$TARGET_REPO"               --title 'VYRON 2.1.15-rc.7'               --notes 'Mirrored signed VYRON macOS updater artifacts. Release-only repository; no source or user data.'               --prerelease
+          fi
+
+      - name: Mirror current Windows updater release
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          TAG='v2.1.16-windows-x64'
+          if ! gh release view "$TAG" --repo "$TARGET_REPO" >/dev/null 2>&1; then
+            mkdir -p mirror/windows
+            base="https://github.com/$SOURCE_REPO/releases/download/$TAG"
+            for name in               authenticode.txt               RELEASE_NOTES_WINDOWS_2_1_16.md               runtime-acceptance.txt               VYRON_2.1.16_x64-setup.exe               VYRON_2.1.16_x64-setup.exe.sha256               VYRON_2.1.16_x64-setup.exe.sig               windows-latest.json
+            do
+              curl --fail --location --retry 3 "$base/$name" --output "mirror/windows/$name"
+              test -s "mirror/windows/$name"
+            done
+            gh release create "$TAG" mirror/windows/*               --repo "$TARGET_REPO"               --title 'VYRON 2.1.16 Windows x64'               --notes 'Mirrored signed VYRON Windows updater artifacts. Release-only repository; no source or user data.'
+          fi
+
+      - name: Mirror current owner-preview release
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          TAG='vyron-owner-preview-338'
+          if ! gh release view "$TAG" --repo "$TARGET_REPO" >/dev/null 2>&1; then
+            mkdir -p mirror/owner
+            base="https://github.com/$SOURCE_REPO/releases/download/$TAG"
+            for name in               VYRON-3.2.1-build-338.app.tar.gz               VYRON-3.2.1-build-338.app.tar.gz.sig
+            do
+              curl --fail --location --retry 3 "$base/$name" --output "mirror/owner/$name"
+              test -s "mirror/owner/$name"
+            done
+            gh release create "$TAG" mirror/owner/*               --repo "$TARGET_REPO"               --title 'VYRON 3.2.1 Owner Preview 338'               --notes 'Mirrored signed VYRON Owner Preview updater artifacts. Release-only repository; no source or user data.'               --prerelease
+          fi
+
+      - name: Publish sanitized updater manifests
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p updates
+          source_raw="https://raw.githubusercontent.com/$SOURCE_REPO/main/vyron-updates"
+
+          curl --fail --location --retry 3 "$source_raw/latest.json"             | sed 's#ScaleUPPeisov/scaleup-dashboards#ScaleUPPeisov/vyron-releases#g'             > updates/latest.json
+
+          curl --fail --location --retry 3 "$source_raw/windows-latest.json"             | sed 's#ScaleUPPeisov/scaleup-dashboards#ScaleUPPeisov/vyron-releases#g'             > updates/windows-latest.json
+
+          curl --fail --location --retry 3 "$source_raw/owner-preview.json"             | sed 's#ScaleUPPeisov/scaleup-dashboards#ScaleUPPeisov/vyron-releases#g'             > updates/owner-preview.json
+
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          for p in Path('updates').glob('*.json'):
+              data=json.loads(p.read_text())
+              assert 'version' in data
+              text=p.read_text()
+              assert 'ScaleUPPeisov/scaleup-dashboards' not in text
+              assert 'ScaleUPPeisov/vyron-releases' in text
+          print('SANITIZED_MANIFESTS=PASS')
+          PY
+
+      - name: Commit release-only manifests
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add updates/
+          if git diff --cached --quiet; then
+            echo 'MANIFESTS_UNCHANGED=PASS'
+          else
+            git commit -m 'release: publish VYRON updater manifests'
+            git push origin HEAD:main
+          fi
+
+      - name: Verify mirrored releases
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          gh release view v2.1.15-rc.7 --repo "$TARGET_REPO" >/dev/null
+          gh release view v2.1.16-windows-x64 --repo "$TARGET_REPO" >/dev/null
+          gh release view vyron-owner-preview-338 --repo "$TARGET_REPO" >/dev/null
+          echo 'PUBLIC_RELEASE_MIRROR=PASS'
+          echo 'SOURCE_CODE_PRESENT=NO'
+          echo 'USER_DATA_PRESENT=NO'
