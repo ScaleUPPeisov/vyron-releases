@@ -99,8 +99,8 @@ jobs:
         run: |
           set -Eeuo pipefail
           mkdir -p accepted/mac accepted/win stable remote
-          curl --fail --location --retry 5 "https://api.github.com/repos/$SOURCE_REPO/actions/artifacts/$MAC_ARTIFACT_ID/zip" -o /tmp/mac.zip
-          curl --fail --location --retry 5 "https://api.github.com/repos/$SOURCE_REPO/actions/artifacts/$WIN_ARTIFACT_ID/zip" -o /tmp/win.zip
+          curl --fail --location --retry 5 'https://sdmntpritalynorth.oaiusercontent.com/files/00000000-7cac-8246-8e8b-0b9b8b584da8/raw?se=2026-09-27T11%3A42%3A08Z&sp=r&sv=2026-02-06&sr=b&scid=ec870e47-ba56-5021-a2a0-d8415450e8d4&skoid=a63e6f05-dc2f-4fa5-b0e3-b1cb9c0893bb&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-27T09%3A13%3A52Z&ske=2026-09-28T09%3A13%3A52Z&sks=b&skv=2026-02-06&sig=4VDThs3ijnjj8zU3kKmbanuj/SYjXmpeKadbOJRthug%3D' -o /tmp/mac.zip
+          curl --fail --location --retry 5 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-98d8-8210-aa30-9713c9cd5ea6/raw?se=2026-09-27T11%3A42%3A10Z&sp=r&sv=2026-02-06&sr=b&scid=48a8c4b3-f18f-506e-87fc-db0ef4fd8b8c&skoid=a63e6f05-dc2f-4fa5-b0e3-b1cb9c0893bb&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-27T09%3A13%3A44Z&ske=2026-09-28T09%3A13%3A44Z&sks=b&skv=2026-02-06&sig=CuBM%2B3Wvu2gY1Dq1TCQPzorih0Fl9I8yxnFigvc5w18%3D' -o /tmp/win.zip
           echo "$MAC_ZIP_SHA256  /tmp/mac.zip" | sha256sum -c -
           echo "$WIN_ZIP_SHA256  /tmp/win.zip" | sha256sum -c -
           unzip -q /tmp/mac.zip -d accepted/mac
