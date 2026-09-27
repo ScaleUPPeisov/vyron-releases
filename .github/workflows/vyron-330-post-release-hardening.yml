@@ -1,0 +1,63 @@
+name: VYRON 3.3.0 Post Release Hardening
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/vyron-330-post-release-hardening.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  REPO: ScaleUPPeisov/vyron-releases
+  TAG: v3.3.0
+
+jobs:
+  harden:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Remove internal evidence assets containing local runner paths
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          gh api "repos/$REPO/releases/tags/$TAG" > /tmp/release.json
+          for name in codesign-details.txt designated-requirement.txt windows-physical-acceptance.txt; do
+            id="$(jq -r --arg n "$name" '.assets[] | select(.name==$n) | .id' /tmp/release.json)"
+            if [ -n "$id" ] && [ "$id" != "null" ]; then
+              gh api -X DELETE "repos/$REPO/releases/assets/$id"
+              echo "REMOVED_INTERNAL_ASSET=$name"
+            fi
+          done
+
+      - name: Verify public release asset allowlist
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          gh api "repos/$REPO/releases/tags/$TAG" > /tmp/after.json
+          python3 - <<'PY'
+          import json
+          d=json.load(open('/tmp/after.json'))
+          names={x['name'] for x in d['assets']}
+          required={
+            'VYRON-3.3.0-arm64.dmg',
+            'VYRON-3.3.0-arm64.dmg.sha256',
+            'VYRON.app.tar.gz',
+            'VYRON.app.tar.gz.sha256',
+            'VYRON.app.tar.gz.sig',
+            'VYRON_3.3.0_x64-setup.exe',
+            'VYRON_3.3.0_x64-setup.exe.sha256',
+            'VYRON_3.3.0_x64-setup.exe.sig',
+          }
+          forbidden={'codesign-details.txt','designated-requirement.txt','windows-physical-acceptance.txt'}
+          assert required <= names, required-names
+          assert not (names & forbidden), names & forbidden
+          assert names <= required, names-required
+          print('PUBLIC_RELEASE_ASSET_ALLOWLIST=PASS')
+          PY
