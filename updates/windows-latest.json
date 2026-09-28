@@ -1,11 +1,11 @@
 {
-  "version": "3.3.4",
-  "notes": "VYRON 3.3.4 — Live Content Inventory; live per-channel render stock, safe offline snapshots, cross-platform watcher/path handling, existing channels/OAuth/local state preserved.",
-  "pub_date": "2026-09-28T06:25:11Z",
+  "version": "3.3.5",
+  "notes": "VYRON 3.3.5 — Render folder picker hotfix; exact per-channel Render selection, Projects protection, immediate persistence and rescan.",
+  "pub_date": "2026-09-28T06:57:00Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v3.3.4/VYRON_3.3.4_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1VFQkU1bEJPdmp3ZGxIOGFCaEZBbStsUnlwbk5hc0Zxam1qRHhwcjVlejRFTmQwTG1lNnVpRTRBbnlhcjFVN0hidkVTZFpnN1A2R3BqMmhTTUVMZ2dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNTc1Mjg3CWZpbGU6VllST05fMy4zLjRfeDY0LXNldHVwLmV4ZQpJZ3YrcFJEY09NWklDS3N0d1lmVDE0NlpsRWVtKzZ2aTJhNDlEeE10eVgwT0VselF1OFAwSm9SSVBpMENrZWhBNzZXWk54YTdHRUhqczZXWVZUTTNCUT09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v3.3.5/VYRON_3.3.5_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2RvMEkxUXBwRmVqdi91bXNkSWVXVFIvRkR4dzVpY0VWMFJaNUNTUTB0d01EcGpZQzhRZlg3dTkvWkZDZmdFVUJQNWpzUTlENzI0OEtLcGJYRVA0R2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNTc4NDY1CWZpbGU6VllST05fMy4zLjVfeDY0LXNldHVwLmV4ZQpaTnBmVnUyb1pXQ0lMQnlxc0hXRVV4cVpvU2ZDZnYzRWlEang4cDlQaldiSzg1MEVHNlZYSURRSlpvZmtqc0R0cEM2aTZxWUNnR01SZzE3ZGhMNmlCQT09Cg=="
     }
   }
 }

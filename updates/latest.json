@@ -1,11 +1,11 @@
 {
-  "version": "3.3.4",
-  "notes": "VYRON 3.3.4 — Live Content Inventory; live per-channel render stock, safe offline snapshots, cross-platform watcher/path handling, existing channels/OAuth/local state preserved.",
-  "pub_date": "2026-09-28T06:25:11Z",
+  "version": "3.3.5",
+  "notes": "VYRON 3.3.5 — Render folder picker hotfix; exact per-channel Render selection, Projects protection, immediate persistence and rescan.",
+  "pub_date": "2026-09-28T06:57:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v3.3.4/VYRON.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1ZoMlA2UkVpV2Vkcmt2UWZBUks4WHhMQ3ZIeUlIUTFNbWI2NUpOVkRiaHpvQ2hSM3ZJSXpJb1FvRmd2bXZzajBuViszZ042TEdzdldGcTA0cWtUaUEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNTc0NjA0CWZpbGU6VllST04uYXBwLnRhci5negpMLy9QSEhnRm1POXNzT2ozNEk0WnpKVEFhbXFCVlkrUmlaaFNTMWR3ZlkzZW4wZmdVMkhKQVB6NlQ4MFo1NHhrQWd3T28wNm1iUmpsZVI3RjJwbHZEQT09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v3.3.5/VYRON.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2RpU25tZG9SaUhSaGkrSjJzcE5yS3hWYWYxT1VSb1piQWxLUmhHaHlXdDB3WjJUUW91bjI5NFRwdkMrVkx2aWdJNkNMbjgwSjNPV3ZUY1VndDRJMUE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNTc4NTk2CWZpbGU6VllST04uYXBwLnRhci5negpFOTVYajV4NHFBUGEzWmtUQWdiMFRrRnlBL2VlNmF6aEI2ckRzN3NycWxMeDF0TVpLT2NtcW5jdElMUldDcW4zWTFYZTV3TlNieUM0UXFHOUF3cGpBdz09Cg=="
     }
   }
 }
