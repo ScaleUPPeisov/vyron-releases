@@ -1,11 +1,11 @@
 {
-  "version": "4.0.0",
-  "notes": "VYRON 4.0.0 — major update: owner dashboard, factual YouTube state, shared 100-video VYRON upload cap, non-blocking Render scan, performance hardening and Plan Channels recovery.",
-  "pub_date": "2026-09-28T12:03:06Z",
+  "version": "4.0.1",
+  "notes": "VYRON 4.0.1 — macOS stability and performance hotfix: smoother inventory scans, coalesced persistence, History improvements, channel avatars, owner profile and channel deduplication.",
+  "pub_date": "2026-09-28T15:08:34Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v4.0.0/VYRON.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1pLZmNKeTYxTjJrRlNDKzhoWDlFTWZzMms2MkVQenNVMGMyUkQ2eTFwYU00SkxUWmhHcWIwL3gwUWFvRkFXMFRYWDZ6Ym8wamRyU3FZLytaQVlZQVE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNTk2MTU3CWZpbGU6VllST04uYXBwLnRhci5negpWZ0JFaFhKaU9RNHlTR25MWlJjTVVwNC83bFZ3aU5mY2NOeGxxWUl1dlUwaVZLNnFJeGFLY2Zwc1V5QWtBcU5JRlRtT0hxVUlrZHhBTTgyVkpxWS9BQT09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v4.0.1/VYRON.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1kwTXhneGllcGZodExhUEg1Z2VHUnFLWHVNNzV1VXljS3FGSzdxQmVTSGlheGFLNFJhSzNVdWxPZ2hVY0VlTFkxdDUyaDhNLzl2K1NwRm5Ec0Z5WWdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNjA4MDgzCWZpbGU6VllST04uYXBwLnRhci5negpEcVdWdW5Vb1JwSlhhZ25uRHIyOWw4ZVFCNnhkSTRCbjVTcUYyaWlWN0JnZk9UZlU1YnBsdDJGZWplSklGSFNVanRiN3NQTytSSzVnZ2JRdDZFcnFEQT09Cg=="
     }
   }
 }
