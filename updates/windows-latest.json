@@ -1,11 +1,11 @@
 {
-  "version": "3.3.5",
-  "notes": "VYRON 3.3.5 — Render folder picker hotfix; exact per-channel Render selection, Projects protection, immediate persistence and rescan.",
-  "pub_date": "2026-09-28T06:57:00Z",
+  "version": "4.0.0",
+  "notes": "VYRON 4.0.0 — major update: owner dashboard, factual YouTube state, shared 100-video VYRON upload cap, non-blocking Render scan, performance hardening and Plan Channels recovery.",
+  "pub_date": "2026-09-28T12:03:06Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v3.3.5/VYRON_3.3.5_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2RvMEkxUXBwRmVqdi91bXNkSWVXVFIvRkR4dzVpY0VWMFJaNUNTUTB0d01EcGpZQzhRZlg3dTkvWkZDZmdFVUJQNWpzUTlENzI0OEtLcGJYRVA0R2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNTc4NDY1CWZpbGU6VllST05fMy4zLjVfeDY0LXNldHVwLmV4ZQpaTnBmVnUyb1pXQ0lMQnlxc0hXRVV4cVpvU2ZDZnYzRWlEang4cDlQaldiSzg1MEVHNlZYSURRSlpvZmtqc0R0cEM2aTZxWUNnR01SZzE3ZGhMNmlCQT09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v4.0.0/VYRON_4.0.0_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2F2bWYvS05oMWhLN244M1hzWmNMSDJHWVNnSWxNbkxBdndkR3VzdzFqdmN2bVU0S0Uxd2gzeXBMWk1XN1NNd0I0TXdDSEJucTZFYUcwVHF0ODl3b1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNTk2NjkyCWZpbGU6VllST05fNC4wLjBfeDY0LXNldHVwLmV4ZQo2NURqVkw1VXBBeFVQdXVTWnZIZ2lKSXQwWStiak13NFpsOHVuSUQyTFZMNFFra3N4QWMwbU9pcDlHNlYvNTF0WURGbnd1cDdkZmtkejNCb0xDN2NDZz09Cg=="
     }
   }
 }
