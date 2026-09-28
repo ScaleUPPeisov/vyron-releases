@@ -1,11 +1,11 @@
 {
-  "version": "3.3.3",
-  "notes": "VYRON 3.3.3 — macOS Publisher DOCX schedule hotfix: bare PUBLISH parsing, DD.MM.YYYY/KRAT support, separate cadence date and per-video file time, explicit missing-time validation; existing channels, OAuth profiles and local state preserved.",
-  "pub_date": "2026-09-28T03:03:00Z",
+  "version": "3.3.4",
+  "notes": "VYRON 3.3.4 — Live Content Inventory; live per-channel render stock, safe offline snapshots, cross-platform watcher/path handling, existing channels/OAuth/local state preserved.",
+  "pub_date": "2026-09-28T06:25:11Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v3.3.3/VYRON.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2ZJU0Z4OWJZR0Z6TzZUL3JqZGJsalpHbGJuOGNmTExlZUxlOWt6VzQxN0ZELzIzM1FFZzZVS3RIQTc3Q2NVVFVrNnBmR1FqTHZuZEhHekMvK0RNekFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNTY0MDMwCWZpbGU6VllST04uYXBwLnRhci5negpMQ0ErcXhKcGJUQlNFTE9LTWNzZUJyZk43TjZ6OUNyUGY1bXBzS3ZYNnQ0R2FadHlUNkpzZFZQbFZOMUJCVXk4dUNZODVIcnV0QmlDZEdubXlWbmFEdz09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v3.3.4/VYRON.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1ZoMlA2UkVpV2Vkcmt2UWZBUks4WHhMQ3ZIeUlIUTFNbWI2NUpOVkRiaHpvQ2hSM3ZJSXpJb1FvRmd2bXZzajBuViszZ042TEdzdldGcTA0cWtUaUEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNTc0NjA0CWZpbGU6VllST04uYXBwLnRhci5negpMLy9QSEhnRm1POXNzT2ozNEk0WnpKVEFhbXFCVlkrUmlaaFNTMWR3ZlkzZW4wZmdVMkhKQVB6NlQ4MFo1NHhrQWd3T28wNm1iUmpsZVI3RjJwbHZEQT09Cg=="
     }
   }
 }

@@ -1,11 +1,11 @@
 {
-  "version": "3.3.2",
-  "notes": "VYRON 3.3.2 — Windows OAuth launcher hotfix; cmd.exe removed from OAuth browser launch; existing channels, OAuth profiles and local data preserved.",
-  "pub_date": "2026-09-27T15:37:51Z",
+  "version": "3.3.4",
+  "notes": "VYRON 3.3.4 — Live Content Inventory; live per-channel render stock, safe offline snapshots, cross-platform watcher/path handling, existing channels/OAuth/local state preserved.",
+  "pub_date": "2026-09-28T06:25:11Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v3.3.2/VYRON_3.3.2_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1VvZFlaUk5LUGJsTW1ZWit3MmFYT1ZGbDZDdm5udDNsUEJEOTNIV1ZiOStOcFlMdlZnS1pld1NGQkJ5TFFKY3RaUjF0S1FzYlpTSnJWOU8wVXRlVlFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNTIyODMzCWZpbGU6VllST05fMy4zLjJfeDY0LXNldHVwLmV4ZQo5M3dsOXliZFpCNFE5UGhxc3haMjVObWhZdjdSbWN0Tng0SU1tR3ZqMTU2bU12SUJRbytrVVo0M24wb0VaZFlzWGJHd1ZyTlYzZlgwWTd6L0dBNXlEdz09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v3.3.4/VYRON_3.3.4_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1VFQkU1bEJPdmp3ZGxIOGFCaEZBbStsUnlwbk5hc0Zxam1qRHhwcjVlejRFTmQwTG1lNnVpRTRBbnlhcjFVN0hidkVTZFpnN1A2R3BqMmhTTUVMZ2dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNTc1Mjg3CWZpbGU6VllST05fMy4zLjRfeDY0LXNldHVwLmV4ZQpJZ3YrcFJEY09NWklDS3N0d1lmVDE0NlpsRWVtKzZ2aTJhNDlEeE10eVgwT0VselF1OFAwSm9SSVBpMENrZWhBNzZXWk54YTdHRUhqczZXWVZUTTNCUT09Cg=="
     }
   }
 }
