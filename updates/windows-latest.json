@@ -1,11 +1,11 @@
 {
-  "version": "4.0.0",
-  "notes": "VYRON 4.0.0 — major update: owner dashboard, factual YouTube state, shared 100-video VYRON upload cap, non-blocking Render scan, performance hardening and Plan Channels recovery.",
-  "pub_date": "2026-09-28T12:03:06Z",
+  "version": "5.0.0",
+  "notes": "VYRON 5.0.0 — Owner Operations Center: Daily Operations, Channel Passport, Production Pipeline, quota-aware Batch Control, Command Palette, Notification Center, System Health, diagnostics and performance hardening.",
+  "pub_date": "2026-09-29T06:57:15Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v4.0.0/VYRON_4.0.0_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2F2bWYvS05oMWhLN244M1hzWmNMSDJHWVNnSWxNbkxBdndkR3VzdzFqdmN2bVU0S0Uxd2gzeXBMWk1XN1NNd0I0TXdDSEJucTZFYUcwVHF0ODl3b1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNTk2NjkyCWZpbGU6VllST05fNC4wLjBfeDY0LXNldHVwLmV4ZQo2NURqVkw1VXBBeFVQdXVTWnZIZ2lKSXQwWStiak13NFpsOHVuSUQyTFZMNFFra3N4QWMwbU9pcDlHNlYvNTF0WURGbnd1cDdkZmtkejNCb0xDN2NDZz09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.0.0/VYRON_5.0.0_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1hGUjZTZSsyWjk0SHlsbnB5SFJPVnN0bUNGWmV0azhmUWxDN2ZDOW5NRFl2cm16TVpmL1RVVm5YVXQyRmIzQTNYMFI3VTVZamNqQTFJQTdIQ0RUdkF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNjUyMzYxCWZpbGU6VllST05fNS4wLjBfeDY0LXNldHVwLmV4ZQpkMkdicHZOS1JyWFZ3WGpOVEdxL2FPcDljcGpMQzFVYldaK0xUVGV1UDBTdGxGWHJjNzNodmx2YS9hMk1sb2M2K3FHUGJ3V29UMWRxQ1VDbTBHTFRDUT09Cg=="
     }
   }
 }
