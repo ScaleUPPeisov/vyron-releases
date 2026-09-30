@@ -1,11 +1,15 @@
 {
   "version": "5.1.1",
   "notes": "VYRON 5.1.1 — ENDLUME Windows Handoff Hotfix: real cross-platform ENDLUME inbox handoff, no false accepted state, protected Google/YouTube/OAuth continuity.",
-  "pub_date": "2026-09-30T12:43:04Z",
+  "pub_date": "2026-09-30T12:44:10Z",
   "platforms": {
     "darwin-aarch64": {
       "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.1.1/VYRON.app.tar.gz",
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1ZHVVJyYmFaeW5vY29DWFhYYzJpcFR1M0prdU5kOHFkYXB1MXFNTlZOczIramZrWG9ac1ZqeHFXd0dmcjhpcjcvZWpjTk9lUStLa2xnaWV5YlpWcmdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzY2MTA1CWZpbGU6VllST04uYXBwLnRhci5negpLdkxjNlVmRUIxN0IwbVVQa3lzdjZEQlhEVmVkdFJ6OWdBMlNoZlZ2S1hrYVAxVnJuSGovc00vOWs5RmJLNmZ3U21SU1RwTGFMbVZjeksyeDd4M1REQT09Cg=="
+    },
+    "windows-x86_64": {
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.1.1/VYRON_5.1.1_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2NpUFNhODFGa0pBenBpVFFHbk1JK0tOeGE0TXZ6L2tpUm5XMytaQ05kYXdJYXZ2TEJLNENFa1l6eFpuSFZLSXMrRXRLQmlFRkJOVkgwa3NXYlp4UEFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzY2MzAwCWZpbGU6VllST05fNS4xLjFfeDY0LXNldHVwLmV4ZQpLUVZlTDh6c05CMXdXd0pwMjd4ekc0UmZoamlZdytLazhxb0o3WDlMY0x1NWQ1ejhvaGp2VnhhQjkvRUtLdDlnTDlTajB6K3dUT3o1UzJBYXdmK2tDZz09Cg=="
     }
   }
 }
