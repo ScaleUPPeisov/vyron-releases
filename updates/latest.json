@@ -1,15 +1,11 @@
 {
-  "version": "5.0.3",
-  "notes": "VYRON 5.0.3 — Upload Counter Restore Hotfix: restores today's successful VYRON uploads after update/restart; local-only, zero extra YouTube API requests.",
-  "pub_date": "2026-09-30T01:09:01Z",
+  "version": "5.1.0",
+  "notes": "VYRON 5.1.0 — Materials Manager: local per-channel image and music inventory, render-validated SAFE_TO_CLEAN, safe project-copy cleanup, and zero extra YouTube API requests.",
+  "pub_date": "2026-09-30T08:34:40Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.0.3/VYRON.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2VjVk15TDM3dlJ1Q3pKdDZuOXY3akhnL1htcys4QWVIOHdVWjl1YlVaZi9XQ3VHMHR4VkZnSzd2a3RsQ3lNZmwvdTNWdTdodWE4YXozODNsZUFHSkE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzI5Mjk4CWZpbGU6VllST04uYXBwLnRhci5negpsMW9IRjRZRHhtVlV2Q2QyQlhaTEZ4eGgzR0JGOHd0emdhV05DQnNVMUFvalNGaHVRdG5vQUZScmtFOHFGeTUxMUVReEdGZTZQcVVBUlBvVUxERlZBZz09Cg=="
-    },
-    "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.0.3/VYRON_5.0.3_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2RzMENDS003T0VmTTF3TytkZFpDUnB1YlFGclJOVkZvVE5ONWROZktXZ3NQQVhKOXZEdzVsY3lLZHhQaHdOaGpJUjRod2pLdWh3UlF4Q1RUS2tHN3dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzMwMzkxCWZpbGU6VllST05fNS4wLjNfeDY0LXNldHVwLmV4ZQpLTVlOeXNaR09lYTQ2TTlqaGdyMnFzOHBaU1NHVXozRHJMTFVRRXQxYWZFL2ErcmdIeVZVaWJhNDZUT0paYlgxdzlDWnNjcDFPUW5qNWY2Vk0yTW1CZz09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.1.0/VYRON.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1UzZ08yZ3R4eGwwRkVjUFpHSGM0OUI3b3NiNElBTnNwZ2Y4Zmw2Smk4NXMvRDllNkJ5VVJXbGhmaGpadlVqS0F0OEVCaWFDakdYOTJkd2loSW1OL2dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzU3MDY0CWZpbGU6VllST04uYXBwLnRhci5negpGWE5HQVg5Zi8xVDB4OWxzMmlyRmNqM21VWHNjSVZjNWhDRzl4R2t5dlpXbUd5U1RJSUdOdnRUYzNYZ2JBTFYxZFZOWU9YOXV1LzBBbGVTZnNyNFFEQT09Cg=="
     }
   }
 }
