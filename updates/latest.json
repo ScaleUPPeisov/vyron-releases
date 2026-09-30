@@ -1,11 +1,15 @@
 {
   "version": "5.0.3",
-  "notes": "VYRON 5.0.3 — Upload Counter Restore Hotfix: restores today's successful VYRON uploads from persisted history after update/restart; local-only, zero extra YouTube API requests.",
-  "pub_date": "2026-09-30T00:51:22Z",
+  "notes": "VYRON 5.0.3 — Upload Counter Restore Hotfix: restores today's successful VYRON uploads after update/restart; local-only, zero extra YouTube API requests.",
+  "pub_date": "2026-09-30T01:09:01Z",
   "platforms": {
     "darwin-aarch64": {
       "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.0.3/VYRON.app.tar.gz",
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2VjVk15TDM3dlJ1Q3pKdDZuOXY3akhnL1htcys4QWVIOHdVWjl1YlVaZi9XQ3VHMHR4VkZnSzd2a3RsQ3lNZmwvdTNWdTdodWE4YXozODNsZUFHSkE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzI5Mjk4CWZpbGU6VllST04uYXBwLnRhci5negpsMW9IRjRZRHhtVlV2Q2QyQlhaTEZ4eGgzR0JGOHd0emdhV05DQnNVMUFvalNGaHVRdG5vQUZScmtFOHFGeTUxMUVReEdGZTZQcVVBUlBvVUxERlZBZz09Cg=="
+    },
+    "windows-x86_64": {
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.0.3/VYRON_5.0.3_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2RzMENDS003T0VmTTF3TytkZFpDUnB1YlFGclJOVkZvVE5ONWROZktXZ3NQQVhKOXZEdzVsY3lLZHhQaHdOaGpJUjRod2pLdWh3UlF4Q1RUS2tHN3dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzMwMzkxCWZpbGU6VllST05fNS4wLjNfeDY0LXNldHVwLmV4ZQpLTVlOeXNaR09lYTQ2TTlqaGdyMnFzOHBaU1NHVXozRHJMTFVRRXQxYWZFL2ErcmdIeVZVaWJhNDZUT0paYlgxdzlDWnNjcDFPUW5qNWY2Vk0yTW1CZz09Cg=="
     }
   }
 }

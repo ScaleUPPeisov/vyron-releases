@@ -1,11 +1,11 @@
 {
-  "version": "5.0.1",
-  "notes": "VYRON 5.0.1 — Zero Background Quota / Owner Hotfix: zero idle YouTube API requests, fixed live upload counter, cached/manual statistics, safer local folder migration and owner UI fixes.",
-  "pub_date": "2026-09-29T07:48:57Z",
+  "version": "5.0.3",
+  "notes": "VYRON 5.0.3 — Upload Counter Restore Hotfix: restores today's successful VYRON uploads after update/restart; local-only, zero extra YouTube API requests.",
+  "pub_date": "2026-09-30T01:09:01Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.0.1/VYRON_5.0.1_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1NvUTBHNmRWVmgvamxScWZrWjdrMTl5MWVMUTZCN3gyNlR0dCtVWjVHQ1JaSlVVNU52MWFITVEyK0dzMzZDZE1TS3EvdlVLemF3YTdveXdTUkVkS0FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNjY3OTQzCWZpbGU6VllST05fNS4wLjFfeDY0LXNldHVwLmV4ZQpjWUZmYUtQQUhKd0lGS2J0bCtpdVB1RjRRVVB1Q1FZTjZDdHowME5GR0tIRjI3eFZCdFVCaTMwV0lRYzMvaTBFYStMR0VURzNyN3NZck9EU296bDJCZz09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.0.3/VYRON_5.0.3_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2RzMENDS003T0VmTTF3TytkZFpDUnB1YlFGclJOVkZvVE5ONWROZktXZ3NQQVhKOXZEdzVsY3lLZHhQaHdOaGpJUjRod2pLdWh3UlF4Q1RUS2tHN3dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzMwMzkxCWZpbGU6VllST05fNS4wLjNfeDY0LXNldHVwLmV4ZQpLTVlOeXNaR09lYTQ2TTlqaGdyMnFzOHBaU1NHVXozRHJMTFVRRXQxYWZFL2ErcmdIeVZVaWJhNDZUT0paYlgxdzlDWnNjcDFPUW5qNWY2Vk0yTW1CZz09Cg=="
     }
   }
 }
