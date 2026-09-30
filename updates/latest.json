@@ -1,15 +1,11 @@
 {
-  "version": "5.1.0",
-  "notes": "VYRON 5.1.0 — Materials Manager: local per-channel image and music inventory, render-validated SAFE_TO_CLEAN, safe project-copy cleanup, and zero extra YouTube API requests.",
-  "pub_date": "2026-09-30T10:11:56Z",
+  "version": "5.1.1",
+  "notes": "VYRON 5.1.1 — ENDLUME Windows Handoff Hotfix: real cross-platform ENDLUME inbox handoff, no false accepted state, protected Google/YouTube/OAuth continuity.",
+  "pub_date": "2026-09-30T12:43:04Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.1.0/VYRON.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1UzZ08yZ3R4eGwwRkVjUFpHSGM0OUI3b3NiNElBTnNwZ2Y4Zmw2Smk4NXMvRDllNkJ5VVJXbGhmaGpadlVqS0F0OEVCaWFDakdYOTJkd2loSW1OL2dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzU3MDY0CWZpbGU6VllST04uYXBwLnRhci5negpGWE5HQVg5Zi8xVDB4OWxzMmlyRmNqM21VWHNjSVZjNWhDRzl4R2t5dlpXbUd5U1RJSUdOdnRUYzNYZ2JBTFYxZFZOWU9YOXV1LzBBbGVTZnNyNFFEQT09Cg=="
-    },
-    "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.1.0/VYRON_5.1.0_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1lwMWw1S0NBQVJGRFN0UEtVczNnVUhpdWtNNnhxNEpPQUI1WVZvTjU3OS9MWVRYNzRiSmZERDVhdDF6dE5nVDlLc0l3WmQ3SzZoajhickowbmRPaHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzU4Mzc4CWZpbGU6VllST05fNS4xLjBfeDY0LXNldHVwLmV4ZQpOWHpBc2dLVFYrd3cyb2VXQzVvTmFBd1hBdVE3NklIak1NdFRGZzZOdzI0WU01a1RrcU1lRWM1L0xFVk95aXhNZk5hM2had2hiNDJlcWRDN1FNU01DQT09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.1.1/VYRON.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1ZHVVJyYmFaeW5vY29DWFhYYzJpcFR1M0prdU5kOHFkYXB1MXFNTlZOczIramZrWG9ac1ZqeHFXd0dmcjhpcjcvZWpjTk9lUStLa2xnaWV5YlpWcmdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzY2MTA1CWZpbGU6VllST04uYXBwLnRhci5negpLdkxjNlVmRUIxN0IwbVVQa3lzdjZEQlhEVmVkdFJ6OWdBMlNoZlZ2S1hrYVAxVnJuSGovc00vOWs5RmJLNmZ3U21SU1RwTGFMbVZjeksyeDd4M1REQT09Cg=="
     }
   }
 }
