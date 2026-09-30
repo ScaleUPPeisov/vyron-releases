@@ -1,11 +1,11 @@
 {
-  "version": "5.0.2",
-  "notes": "VYRON 5.0.2 — Full Refresh hotfix: refreshed dashboard totals, authoritative YouTube schedule sync, live local Render READY stock and separate scheduled/ready runway.",
-  "pub_date": "2026-09-29T16:37:59Z",
+  "version": "5.0.3",
+  "notes": "VYRON 5.0.3 — Upload Counter Restore Hotfix: restores today's successful VYRON uploads from persisted history after update/restart; local-only, zero extra YouTube API requests.",
+  "pub_date": "2026-09-30T00:51:22Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.0.2/VYRON.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1RxNm9PUEVJaTJWRUFnMmpWMmdkWFZvcjJuVFExeHNwNzNic01rU3c1cDcxazFCWUtlNEtMUmt6Ylh5NU1zdjFyZGdONmwzc1k2UVZ1TEV0R0I0TmdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNjk5NjkxCWZpbGU6VllST04uYXBwLnRhci5nego2b1BNdnpETk5kUnVqMU5FaU80bndIRzA1dXJWcXRRU2UwQ0NmeG4rWDRHUDIzemZxWmF3UjA1TDd0cWkzNUc3UlhZdzI2Nmg5VGZnbnVoaDBKMy9DUT09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.0.3/VYRON.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2VjVk15TDM3dlJ1Q3pKdDZuOXY3akhnL1htcys4QWVIOHdVWjl1YlVaZi9XQ3VHMHR4VkZnSzd2a3RsQ3lNZmwvdTNWdTdodWE4YXozODNsZUFHSkE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzI5Mjk4CWZpbGU6VllST04uYXBwLnRhci5negpsMW9IRjRZRHhtVlV2Q2QyQlhaTEZ4eGgzR0JGOHd0emdhV05DQnNVMUFvalNGaHVRdG5vQUZScmtFOHFGeTUxMUVReEdGZTZQcVVBUlBvVUxERlZBZz09Cg=="
     }
   }
 }
