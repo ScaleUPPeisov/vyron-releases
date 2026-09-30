@@ -1,11 +1,15 @@
 {
   "version": "5.1.2",
   "notes": "VYRON 5.1.2 — Manual Project Assembly: explicit channel, direct image/music selection, VIDEO_XXX projects, existing ENDLUME and SAFE_TO_CLEAN pipeline.",
-  "pub_date": "2026-09-30T14:44:56Z",
+  "pub_date": "2026-09-30T14:49:15Z",
   "platforms": {
     "darwin-aarch64": {
       "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.1.2/VYRON.app.tar.gz",
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1ZjWHUrSHlUS0QwVjdnd3ZvemoyL2t0V0ZzU0MzZ3lzcm13MHlOVlFpcUlDRUxLc2hmYm1YVjJVYzJUYmVFRFhiM0V4alpvQ2JHYnh0RzA2dGJ5aUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzc4OTM3CWZpbGU6VllST04uYXBwLnRhci5negp3TXFDM3FNNXQ2S2dPZ2FVUVJSQnFvV2tXRjFrTTQ4cWZBc29XZitWcnFwL1I0L2pXVWRaMWR6NnhmMWVkQUllVjZzMXd2eDNyWllTaDFqdUNYUzREQT09Cg=="
+    },
+    "windows-x86_64": {
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.1.2/VYRON_5.1.2_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2NHenJscC9zVDMrcmVodEV0bk9LV01sWVpVY3pWRE5oZnJ1YTZoVW8rNHY1ZVJ1QjdUeldXZXdOalMwelI2VU5Kc1BDck9aYmFGUzk4bEg2ekZ3RFF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzc4ODg2CWZpbGU6VllST05fNS4xLjJfeDY0LXNldHVwLmV4ZQpPS285Vzd5TFoxenhxQjhEelpzSSsxNmFEcXNOa05RdGN4TmZUck9sUHltekFiUnpOc1lTaWkwazNXLzlZbm5KNlUvTlgvZVlnZW1JSWNJYmkwNDlDUT09Cg=="
     }
   }
 }
