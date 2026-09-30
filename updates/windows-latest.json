@@ -1,11 +1,11 @@
 {
-  "version": "5.0.3",
-  "notes": "VYRON 5.0.3 — Upload Counter Restore Hotfix: restores today's successful VYRON uploads after update/restart; local-only, zero extra YouTube API requests.",
-  "pub_date": "2026-09-30T01:09:01Z",
+  "version": "5.1.0",
+  "notes": "VYRON 5.1.0 — Materials Manager: local per-channel image and music inventory, render-validated SAFE_TO_CLEAN, safe project-copy cleanup, and zero extra YouTube API requests.",
+  "pub_date": "2026-09-30T10:11:56Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.0.3/VYRON_5.0.3_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2RzMENDS003T0VmTTF3TytkZFpDUnB1YlFGclJOVkZvVE5ONWROZktXZ3NQQVhKOXZEdzVsY3lLZHhQaHdOaGpJUjRod2pLdWh3UlF4Q1RUS2tHN3dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzMwMzkxCWZpbGU6VllST05fNS4wLjNfeDY0LXNldHVwLmV4ZQpLTVlOeXNaR09lYTQ2TTlqaGdyMnFzOHBaU1NHVXozRHJMTFVRRXQxYWZFL2ErcmdIeVZVaWJhNDZUT0paYlgxdzlDWnNjcDFPUW5qNWY2Vk0yTW1CZz09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.1.0/VYRON_5.1.0_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1lwMWw1S0NBQVJGRFN0UEtVczNnVUhpdWtNNnhxNEpPQUI1WVZvTjU3OS9MWVRYNzRiSmZERDVhdDF6dE5nVDlLc0l3WmQ3SzZoajhickowbmRPaHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzU4Mzc4CWZpbGU6VllST05fNS4xLjBfeDY0LXNldHVwLmV4ZQpOWHpBc2dLVFYrd3cyb2VXQzVvTmFBd1hBdVE3NklIak1NdFRGZzZOdzI0WU01a1RrcU1lRWM1L0xFVk95aXhNZk5hM2had2hiNDJlcWRDN1FNU01DQT09Cg=="
     }
   }
 }

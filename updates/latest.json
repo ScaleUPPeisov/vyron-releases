@@ -1,11 +1,15 @@
 {
   "version": "5.1.0",
   "notes": "VYRON 5.1.0 — Materials Manager: local per-channel image and music inventory, render-validated SAFE_TO_CLEAN, safe project-copy cleanup, and zero extra YouTube API requests.",
-  "pub_date": "2026-09-30T08:34:40Z",
+  "pub_date": "2026-09-30T10:11:56Z",
   "platforms": {
     "darwin-aarch64": {
       "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.1.0/VYRON.app.tar.gz",
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1UzZ08yZ3R4eGwwRkVjUFpHSGM0OUI3b3NiNElBTnNwZ2Y4Zmw2Smk4NXMvRDllNkJ5VVJXbGhmaGpadlVqS0F0OEVCaWFDakdYOTJkd2loSW1OL2dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzU3MDY0CWZpbGU6VllST04uYXBwLnRhci5negpGWE5HQVg5Zi8xVDB4OWxzMmlyRmNqM21VWHNjSVZjNWhDRzl4R2t5dlpXbUd5U1RJSUdOdnRUYzNYZ2JBTFYxZFZOWU9YOXV1LzBBbGVTZnNyNFFEQT09Cg=="
+    },
+    "windows-x86_64": {
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v5.1.0/VYRON_5.1.0_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1lwMWw1S0NBQVJGRFN0UEtVczNnVUhpdWtNNnhxNEpPQUI1WVZvTjU3OS9MWVRYNzRiSmZERDVhdDF6dE5nVDlLc0l3WmQ3SzZoajhickowbmRPaHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzU4Mzc4CWZpbGU6VllST05fNS4xLjBfeDY0LXNldHVwLmV4ZQpOWHpBc2dLVFYrd3cyb2VXQzVvTmFBd1hBdVE3NklIak1NdFRGZzZOdzI0WU01a1RrcU1lRWM1L0xFVk95aXhNZk5hM2had2hiNDJlcWRDN1FNU01DQT09Cg=="
     }
   }
 }
