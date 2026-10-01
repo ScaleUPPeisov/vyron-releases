@@ -1,11 +1,11 @@
 {
-  "version": "6.0.1",
-  "notes": "VYRON 6.0.1 — Windows Migration / UI Hotfix: migration portability, GUI launch, official icon, sidebar/footer, history and diagnostics fixes.",
-  "pub_date": "2026-10-01T03:10:15Z",
+  "version": "6.0.2",
+  "notes": "VYRON 6.0.2 — Manual Production & Sidebar Hotfix",
+  "pub_date": "2026-10-01T07:06:49Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.0.1/VYRON_6.0.1_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2JqU3hlcEFycElaODJiVEYzVTRvZmRzQUF5K2pJTEo4U1huSUZFdnZvVU8rVnNnUmhxTVU3N29ZaEJjZlV4WEh6YUZxNzJpUGJiT3dUT2pRRmlGZlE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODI0MTI1CWZpbGU6VllST05fNi4wLjFfeDY0LXNldHVwLmV4ZQo1ZUhLSHVLZmI2N3o5WlFtRUdPL3Y1cDJqcEtweXNyK2hIcTdKTUVWd2J2dW12bjJNaFZHTWxFSGZHclcvd1VnUHYyVFBYaHpYUThIbjFDeHhTOG1BQT09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.0.2/VYRON_6.0.2_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1E5ODlzcjVMVmo5REtvZkVpUXFTNU1OeS9ObjI1SXVaVWZsZzVlZjI0SC9wZC9DNThidXhjdVJXT2tmYWQ2R1V5UGRaaDM1c1BlTzNuN1hEbXhUc3dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODM4MzA0CWZpbGU6VllST05fNi4wLjJfeDY0LXNldHVwLmV4ZQp6amRwY01MYXJBU3ZkdFkyVWdrVEJTbjAyTk5TazhUS1F1VERHc1FHeTNmdEJDZTVYRXFrdE9hMUg5VGdzVlNtemdDSjlUYmJLcTg3c1FjY2hEVEtEZz09Cg=="
     }
   }
 }
