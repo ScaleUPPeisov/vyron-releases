@@ -1,15 +1,11 @@
 {
-  "version": "6.0.0",
-  "notes": "VYRON 6.0.0 — Zero-Jank Performance Core: batched jobs, deferred persistence, frame-pacing diagnostics and lighter compositor work.",
-  "pub_date": "2026-09-30T16:26:24Z",
+  "version": "6.0.2",
+  "notes": "VYRON 6.0.2 — Manual Production & Sidebar Hotfix",
+  "pub_date": "2026-10-01T06:55:08Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.0.0/VYRON.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2VqaU1lc2V6bTdzOHZrSGZFRWM5bU9Fdk5pODJUaDE2Z1VmVi9TYmE4Z2lYWG5UMU9vaTBUZ04weTc2U3NMRFdiMmtQK2xRd1ZzM2tQZDVLWkVZMFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzg0OTU5CWZpbGU6VllST04uYXBwLnRhci5negprM3hDbU5nQ0Vsdnp1dFVmdEpnQWhLOEloY0szZ2xWdWE5RTJVTThoZDQ2cHhDcWdrMkVQSnBudi9DUlVRRlpBS3BLVytSRjNQUmc2bjdaT25hemREQT09Cg=="
-    },
-    "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.0.0/VYRON_6.0.0_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2VvcFlmZVFycDNLdUlxYTU5eHVzUlZQRVFjZDRSSS9qUnNOQ2FyRzFjTEg1M0JMbkNQUUtDQ1FwYkkzV1NDUlI4Y04wUGhEeFR0Mlkza0FtSmRSQndjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzg1NTA1CWZpbGU6VllST05fNi4wLjBfeDY0LXNldHVwLmV4ZQpZL3NtbDRKcnk1bHFmZTlpUm5CcjRjeU9JSGdMeEdRMDBOTHJ6SWszb1BJTFJEYnd1WC9jTEZFSTljUVA4ZG9lRnBXOC9KR0FNK0trWVpCRlJ1QzVBQT09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.0.2/VYRON.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2I1QVRlbWdPK1ZXT0Z1SUd4aWs4QWJDS1hPSHMrcTBVa2VxSm1CTFpPUkdBaUtMSHQxdXg5NXRsRll0dWxuemdVQUdXaEM1Zzg1ZkpPSzFpNHVFamdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODM3NjM4CWZpbGU6VllST04uYXBwLnRhci5negpyUnJZb2N2YllDNmV6MHFRZlNPTWNtS1N4TUx5VVRRQTIzRUdIRlRZcnVEK1lyejlZVUsxa0RTQ2hRd0srUjhSSDh6KzIraVBLUHRpUlhEQ01oVlFBQT09Cg=="
     }
   }
 }
