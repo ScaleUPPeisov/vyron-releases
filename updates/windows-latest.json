@@ -1,11 +1,11 @@
 {
-  "version": "6.0.0",
-  "notes": "VYRON 6.0.0 — Zero-Jank Performance Core: batched jobs, deferred persistence, frame-pacing diagnostics and lighter compositor work.",
-  "pub_date": "2026-09-30T16:26:24Z",
+  "version": "6.0.1",
+  "notes": "VYRON 6.0.1 — Windows Migration / UI Hotfix: migration portability, GUI launch, official icon, sidebar/footer, history and diagnostics fixes.",
+  "pub_date": "2026-10-01T03:10:15Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.0.0/VYRON_6.0.0_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2VvcFlmZVFycDNLdUlxYTU5eHVzUlZQRVFjZDRSSS9qUnNOQ2FyRzFjTEg1M0JMbkNQUUtDQ1FwYkkzV1NDUlI4Y04wUGhEeFR0Mlkza0FtSmRSQndjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzg1NTA1CWZpbGU6VllST05fNi4wLjBfeDY0LXNldHVwLmV4ZQpZL3NtbDRKcnk1bHFmZTlpUm5CcjRjeU9JSGdMeEdRMDBOTHJ6SWszb1BJTFJEYnd1WC9jTEZFSTljUVA4ZG9lRnBXOC9KR0FNK0trWVpCRlJ1QzVBQT09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.0.1/VYRON_6.0.1_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2JqU3hlcEFycElaODJiVEYzVTRvZmRzQUF5K2pJTEo4U1huSUZFdnZvVU8rVnNnUmhxTVU3N29ZaEJjZlV4WEh6YUZxNzJpUGJiT3dUT2pRRmlGZlE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODI0MTI1CWZpbGU6VllST05fNi4wLjFfeDY0LXNldHVwLmV4ZQo1ZUhLSHVLZmI2N3o5WlFtRUdPL3Y1cDJqcEtweXNyK2hIcTdKTUVWd2J2dW12bjJNaFZHTWxFSGZHclcvd1VnUHYyVFBYaHpYUThIbjFDeHhTOG1BQT09Cg=="
     }
   }
 }
