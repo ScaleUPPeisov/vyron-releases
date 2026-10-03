@@ -1,15 +1,15 @@
 {
-  "version": "6.0.2",
-  "notes": "VYRON 6.0.2 — Manual Production & Sidebar Hotfix",
-  "pub_date": "2026-10-01T07:06:49Z",
+  "version": "6.1.0",
+  "notes": "VYRON 6.1.0 stable release",
+  "pub_date": "2026-10-03T04:15:23Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.0.2/VYRON.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2I1QVRlbWdPK1ZXT0Z1SUd4aWs4QWJDS1hPSHMrcTBVa2VxSm1CTFpPUkdBaUtMSHQxdXg5NXRsRll0dWxuemdVQUdXaEM1Zzg1ZkpPSzFpNHVFamdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODM3NjM4CWZpbGU6VllST04uYXBwLnRhci5negpyUnJZb2N2YllDNmV6MHFRZlNPTWNtS1N4TUx5VVRRQTIzRUdIRlRZcnVEK1lyejlZVUsxa0RTQ2hRd0srUjhSSDh6KzIraVBLUHRpUlhEQ01oVlFBQT09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.0/VYRON.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2F0M2plMVVvZm45SGw0RHloSWYweDM0a3BsVUpxb1FMRS9OUHFFZ29RQlJGalZpa29xNkdTeEFOU3BmbndMNm5GSXIvZENBVUhPOU9KeFlIRUNnTUFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMDAwNjI0CWZpbGU6VllST04uYXBwLnRhci5negpweW9hM0oxd2ZKTTAxZnArYlJNL2FhVnVPd1YrVk1KZXFaZDV6SXIyVjZBMk9CTmJubGFzdUZuWlNlNWFES1phRDlIUUE4SUZwQUVWYXgrNEVzOWlDUT09Cg=="
     },
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.0.2/VYRON_6.0.2_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1E5ODlzcjVMVmo5REtvZkVpUXFTNU1OeS9ObjI1SXVaVWZsZzVlZjI0SC9wZC9DNThidXhjdVJXT2tmYWQ2R1V5UGRaaDM1c1BlTzNuN1hEbXhUc3dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODM4MzA0CWZpbGU6VllST05fNi4wLjJfeDY0LXNldHVwLmV4ZQp6amRwY01MYXJBU3ZkdFkyVWdrVEJTbjAyTk5TazhUS1F1VERHc1FHeTNmdEJDZTVYRXFrdE9hMUg5VGdzVlNtemdDSjlUYmJLcTg3c1FjY2hEVEtEZz09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.0/VYRON_6.1.0_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2UzN2xodUppNWplTk1ISEdSMzBqQ2RSVmRWeEkrS2pRWDJNNXNMUGQwN3ljQVoyUWRIckJqb24yRmRxMzRGRDNIeUZJYzFHNnNDWlFtdzIrL1hvdEFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMDAwODQwCWZpbGU6VllST05fNi4xLjBfeDY0LXNldHVwLmV4ZQp5UnJxb1RIdVduRmhYVFpUY3N2YVVRYjF0dUNDcWVOMjc1YTRxSmhkalJmZWoydzZYY3J0L0J3NVNQYkMvVEEvMU05Skw0MS9zVDBHNDRlOWlzYThCUT09Cg=="
     }
   }
 }

@@ -1,11 +1,11 @@
 {
-  "version": "6.0.2",
-  "notes": "VYRON 6.0.2 — Manual Production & Sidebar Hotfix",
-  "pub_date": "2026-10-01T07:06:49Z",
+  "version": "6.1.0",
+  "notes": "VYRON 6.1.0 stable release",
+  "pub_date": "2026-10-03T04:15:23Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.0.2/VYRON_6.0.2_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1E5ODlzcjVMVmo5REtvZkVpUXFTNU1OeS9ObjI1SXVaVWZsZzVlZjI0SC9wZC9DNThidXhjdVJXT2tmYWQ2R1V5UGRaaDM1c1BlTzNuN1hEbXhUc3dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODM4MzA0CWZpbGU6VllST05fNi4wLjJfeDY0LXNldHVwLmV4ZQp6amRwY01MYXJBU3ZkdFkyVWdrVEJTbjAyTk5TazhUS1F1VERHc1FHeTNmdEJDZTVYRXFrdE9hMUg5VGdzVlNtemdDSjlUYmJLcTg3c1FjY2hEVEtEZz09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.0/VYRON_6.1.0_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2UzN2xodUppNWplTk1ISEdSMzBqQ2RSVmRWeEkrS2pRWDJNNXNMUGQwN3ljQVoyUWRIckJqb24yRmRxMzRGRDNIeUZJYzFHNnNDWlFtdzIrL1hvdEFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMDAwODQwCWZpbGU6VllST05fNi4xLjBfeDY0LXNldHVwLmV4ZQp5UnJxb1RIdVduRmhYVFpUY3N2YVVRYjF0dUNDcWVOMjc1YTRxSmhkalJmZWoydzZYY3J0L0J3NVNQYkMvVEEvMU05Skw0MS9zVDBHNDRlOWlzYThCUT09Cg=="
     }
   }
 }
