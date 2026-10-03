@@ -1,15 +1,15 @@
 {
-  "version": "6.1.0",
-  "notes": "VYRON 6.1.0 stable release",
-  "pub_date": "2026-10-03T04:15:23Z",
+  "version": "6.1.1",
+  "notes": "VYRON 6.1.1 stable release",
+  "pub_date": "2026-10-03T07:40:37Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.0/VYRON.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2F0M2plMVVvZm45SGw0RHloSWYweDM0a3BsVUpxb1FMRS9OUHFFZ29RQlJGalZpa29xNkdTeEFOU3BmbndMNm5GSXIvZENBVUhPOU9KeFlIRUNnTUFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMDAwNjI0CWZpbGU6VllST04uYXBwLnRhci5negpweW9hM0oxd2ZKTTAxZnArYlJNL2FhVnVPd1YrVk1KZXFaZDV6SXIyVjZBMk9CTmJubGFzdUZuWlNlNWFES1phRDlIUUE4SUZwQUVWYXgrNEVzOWlDUT09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.1/VYRON.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1JQSitWNTRwaGhTMVNwWVNGMUhvRDR1UEQ1MDNScWlidHJEeXZQOUd6b1Q4NkR0blFCdXQ5TDh1UUlqTDNKOGRBTVhsVDlpZVJaQVphSGxTZ052QmdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMDEzMDUwCWZpbGU6VllST04uYXBwLnRhci5negplbndLWEZEUDRTYURjSFRWbEhGaVc4YllvYU9OT0wwUjVIbmNLQ1FRZzRSUVRLSzBlNXhvdFUrZFBoMlVneXZ5Z2RTYWt6aXgyeFJIRS9RbE50c0lEZz09Cg=="
     },
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.0/VYRON_6.1.0_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2UzN2xodUppNWplTk1ISEdSMzBqQ2RSVmRWeEkrS2pRWDJNNXNMUGQwN3ljQVoyUWRIckJqb24yRmRxMzRGRDNIeUZJYzFHNnNDWlFtdzIrL1hvdEFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMDAwODQwCWZpbGU6VllST05fNi4xLjBfeDY0LXNldHVwLmV4ZQp5UnJxb1RIdVduRmhYVFpUY3N2YVVRYjF0dUNDcWVOMjc1YTRxSmhkalJmZWoydzZYY3J0L0J3NVNQYkMvVEEvMU05Skw0MS9zVDBHNDRlOWlzYThCUT09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.1/VYRON_6.1.1_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1ZVUXpFQWVjcldLUFFHMHF3a2s5NXZUL3NJTVNYTGZ2enoxc1hST2EvR1UybEpMQU1iT0N0cktKZHB1cm5uRmpLd3M3N3o4b09VU0dyTjB2VkM5cVFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMDEzMTUzCWZpbGU6VllST05fNi4xLjFfeDY0LXNldHVwLmV4ZQpIUzQvT2N2NUMyM2ZiL1JDTWR4dSt2bHAyMGs4ZWhWMzlHME9NK1NZakZvdXVyeVdqUnBMNzhwKyt1WS8yVUZEV3RSLzhpeW4wM1R4ZGVRems5Q0hCdz09Cg=="
     }
   }
 }
