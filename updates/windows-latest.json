@@ -1,11 +1,12 @@
 {
-  "version": "6.1.1",
-  "notes": "VYRON 6.1.1 stable release",
-  "pub_date": "2026-10-03T07:40:37Z",
+  "version": "6.1.2",
+  "notes": "VYRON 6.1.2 native inventory storage + real mac updater hotfix",
+  "pub_date": "2026-10-03T12:08:01Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.1/VYRON_6.1.1_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1ZVUXpFQWVjcldLUFFHMHF3a2s5NXZUL3NJTVNYTGZ2enoxc1hST2EvR1UybEpMQU1iT0N0cktKZHB1cm5uRmpLd3M3N3o4b09VU0dyTjB2VkM5cVFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMDEzMTUzCWZpbGU6VllST05fNi4xLjFfeDY0LXNldHVwLmV4ZQpIUzQvT2N2NUMyM2ZiL1JDTWR4dSt2bHAyMGs4ZWhWMzlHME9NK1NZakZvdXVyeVdqUnBMNzhwKyt1WS8yVUZEV3RSLzhpeW4wM1R4ZGVRems5Q0hCdz09Cg=="
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.2/VYRON_6.1.2_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1lhRlM5Zk1IMlBFeUpobWdhUnVRU3FzN0htbzduaXIrd0dMQncySnRjbVlIMmRDM3hyckdSemhSR2Jiai95MjBCdEh1c1pjUWhoM0JTZ08zcTRURUFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMDI5MjMzCWZpbGU6VllST05fNi4xLjJfeDY0LXNldHVwLmV4ZQpRWm9PTm1wQ3M1YnNsdTZObDhiM1hWaFZLRFNWNFR5NHQ4ZEZxMjQ2MWtINVBvU2tKemFPcVd1bmd2R2M5UmpoaXlzNmFSeU1raytzaVJrRUhyZnBCUT09Cg==",
+      "sha256": "f96b3108acdc9ce92de59b73f8291490af3dd6a7ea5114436ec5a5a8d75a4520"
     }
   }
 }
