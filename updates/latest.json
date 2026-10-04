@@ -1,17 +1,17 @@
 {
-  "version": "6.1.4",
-  "notes": "VYRON 6.1.4 publisher physical inventory hotfix",
-  "pub_date": "2026-10-04T09:52:35Z",
+  "version": "6.1.5",
+  "notes": "VYRON 6.1.5 publisher physical inventory hotfix",
+  "pub_date": "2026-10-04T13:49:42Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.4/VYRON.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1pTRXlSSDgySVcwQTd4a1V6aUE5ek9DYVRIRGcvVGd6Z3VBY1d0OGJ1YjZuWVRXdVFBVEJZczF6dm41cG1adlZveXRSTkcvRmlvUG1DaFVWMFFtOUFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMTA3MzAyCWZpbGU6VllST04uYXBwLnRhci5negpnc2wyekV6SU05dTJ1RTh2YlZCSXFlZnhROUVzdXJRYkRkbG83cU4zZVJSazd3TEVTa3VvMEFOODVGSEROaCtXcTh0eVhFM2JMbFgwSUluRlM3WC9Ddz09Cg==",
-      "sha256": "eab79e56989913a7cca497a3ac6b79185df3b17a98ba041bb29ae5b9c216b8e2"
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.5/VYRON.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1lva2dPK0xza3lnS0Vrc3Nob25jeGQrL051VkRSWm5ZZlZ5VkNBbnZEcVNRSFc1YzRTbzR2YmQxRnlVaGMzVzhqeGRJTkdNVkNlTDArMTRtTXdIdWdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMTIxNjQxCWZpbGU6VllST04uYXBwLnRhci5negpDZFROQklhdFpyWGMxSXd6OFlqRFJoaThqay9IZklJWjRlSjA3amVhY2xqWlZoMmVyZUVPeFB2ZWxFTnlFd0Zmb2dlTDRjUFh5aFBpSnJaSjdMdDVCQT09Cg==",
+      "sha256": "34077a225edba6306d65bc6a24e9f8cc0fe9229f1927a46df696a0a0b54ba446"
     },
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.4/VYRON_6.1.4_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1RSSXdpVnJreVRieW9GNTM4UXlEZVBWalFOMjFGWndkTXlTZDI3RjFXam03KzhDNzhIa0ZEMG0zWHpPeTBRVWVPZzZZU3FuNEEzZzd6TG5wVjNkRGc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMTA3NDc3CWZpbGU6VllST05fNi4xLjRfeDY0LXNldHVwLmV4ZQpzcGtwU0poUVJrQzYxR1pDcm9xb2Z6V2VYV1kvVHVCaU5UWnovL3RZZkVsWEdxR0Y4Q21lcmV5S2s5bFVaSzRNWDZzdnlBbTUvYjRaaEw0eStXSU1EUT09Cg==",
-      "sha256": "c223f8e7cd461e0dd4f8a03d50bdae878a7cb9d1d9636d71df6d64a7840ddc36"
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.5/VYRON_6.1.5_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1ovRWl0Mng5NlRzRUZzLzZrNERKWkJMNThQVVVwS3NZU0JCL2ZmTnFEOTBZbmROUk9FeVVjSGRieWRMR2ttVU91TjlXL2UwaU9TMmM4SDlOYjFoaUFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMTIxNzQyCWZpbGU6VllST05fNi4xLjVfeDY0LXNldHVwLmV4ZQp3N3pkVXgrZVJ6Y0pmTGZNVDFiVXBVRCtreEdkT1RtZFNpMmtBL0FQMUZDdkk5UnBHSmxJeHlGTlBYVlE2aUJ5SytrTE1kR0NiZ0tZdGt3TzFuTHBCQT09Cg==",
+      "sha256": "d1cef347e4113a312dca0c2d6a63c6c51106d9ad8f7a3460efc6c57a68117dcb"
     }
   }
 }
