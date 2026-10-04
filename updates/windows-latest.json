@@ -1,12 +1,12 @@
 {
-  "version": "6.1.2",
-  "notes": "VYRON 6.1.2 native inventory storage + real mac updater hotfix",
-  "pub_date": "2026-10-03T12:08:01Z",
+  "version": "6.1.3",
+  "notes": "VYRON 6.1.3 runway UI delivery hotfix",
+  "pub_date": "2026-10-04T09:00:04Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.2/VYRON_6.1.2_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1lhRlM5Zk1IMlBFeUpobWdhUnVRU3FzN0htbzduaXIrd0dMQncySnRjbVlIMmRDM3hyckdSemhSR2Jiai95MjBCdEh1c1pjUWhoM0JTZ08zcTRURUFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMDI5MjMzCWZpbGU6VllST05fNi4xLjJfeDY0LXNldHVwLmV4ZQpRWm9PTm1wQ3M1YnNsdTZObDhiM1hWaFZLRFNWNFR5NHQ4ZEZxMjQ2MWtINVBvU2tKemFPcVd1bmd2R2M5UmpoaXlzNmFSeU1raytzaVJrRUhyZnBCUT09Cg==",
-      "sha256": "f96b3108acdc9ce92de59b73f8291490af3dd6a7ea5114436ec5a5a8d75a4520"
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.3/VYRON_6.1.3_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2Z3amhXNGpMdmNSUHc0R2lScnBROE00bUNuN1I0RVdrWll1Z2pjMFNCOXBLM29md1lvazlXdk1uNUhVV0ZHdzhVYm9kQUplelhMcmdwYVI1TlZMcndFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMTA0Mjk3CWZpbGU6VllST05fNi4xLjNfeDY0LXNldHVwLmV4ZQpQeXphL29QemRrRHQvd1BLWkFLUEN5Wk9xUTVqaWVEMWVXZDRYMm81aWpEOW83ano1M3BmbDhTL1F1NkNPSUprZm9GVmFNNjk5cDAzYjBDM2ZRNllEZz09Cg==",
+      "sha256": "30f1cf9900ffbd55dcaf5dbc68c300dc33ea6c1c8aca49928d7553b3e1e240da"
     }
   }
 }
