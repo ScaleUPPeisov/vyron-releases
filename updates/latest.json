@@ -1,12 +1,12 @@
 {
-  "version": "6.1.8",
-  "notes": "VYRON 6.1.8 Publisher Integrity Hotfix — macOS",
-  "pub_date": "2026-10-05T14:42:42Z",
+  "version": "6.1.9",
+  "notes": "VYRON 6.1.9 Publisher Always-Open + Schedule Source Hotfix — macOS",
+  "pub_date": "2026-10-05T18:12:49Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.8/VYRON.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1EyTWJmdUxNb0N2eFVNbzVvanMwV3gvNDhLS0Irc2NKRUdHTVpIV0pLRlJIaFVBV1p2aXJCQmpRSjB4ellVVFhKS2tLbitPdkQrTk44aGkvN0VrSlE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjExMjk1CWZpbGU6VllST04uYXBwLnRhci5negpPQWpQYzBxcFZzQkZ4bk85T2xTaHFYcTJ1VzBYa1Q1UzV5ME9vS3Uyd1RmcWp5eHdReEZLZUcyU2xhK1VtaTI2OGF1OVpVZ0JQNmFzcFpETnRQRE1DQT09Cg==",
-      "sha256": "8ecafc794284b260294bd7f097014746057819b19f3b2a0ee328096ad942dc86"
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.9/VYRON.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1lkeVRoYVd0VVFLWWJVK3dKUVVVc1paNkNvRE5zeVNpMmIyanBDQkV2RnBna0xob2pyeVF0QWRjNzJnd1I2TDdqUDhCaUZJTmt3a2RzNTRXWjQvR2dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjIzOTE1CWZpbGU6VllST04uYXBwLnRhci5negpuRDhZbkswb1ZEdkRTWU5PV1hnc1F2ZG9iVk9JZkFFSWRtVEFIdTNFYkpPM0NTUVNscFJsclVvT255UzZoSkN1M1N6ams1UUFNTWk1NjFQZTJLeXFCUT09Cg==",
+      "sha256": "09873754b0d74c4c22d7b8ee190b07f3c36ac4738dd0be3d98665adebcd33c4a"
     }
   }
 }
