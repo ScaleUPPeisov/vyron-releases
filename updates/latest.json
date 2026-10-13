@@ -1,12 +1,12 @@
 {
-  "version": "6.1.9",
-  "notes": "VYRON 6.1.9 Publisher Always-Open + Schedule Source Hotfix — macOS",
-  "pub_date": "2026-10-05T18:12:49Z",
+  "version": "6.1.11",
+  "notes": "VYRON 6.1.11 — Metadata Identity + Inventory Stability Hotfix (macOS)",
+  "pub_date": "2026-10-13T12:01:46Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.9/VYRON.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1lkeVRoYVd0VVFLWWJVK3dKUVVVc1paNkNvRE5zeVNpMmIyanBDQkV2RnBna0xob2pyeVF0QWRjNzJnd1I2TDdqUDhCaUZJTmt3a2RzNTRXWjQvR2dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjIzOTE1CWZpbGU6VllST04uYXBwLnRhci5negpuRDhZbkswb1ZEdkRTWU5PV1hnc1F2ZG9iVk9JZkFFSWRtVEFIdTNFYkpPM0NTUVNscFJsclVvT255UzZoSkN1M1N6ams1UUFNTWk1NjFQZTJLeXFCUT09Cg==",
-      "sha256": "09873754b0d74c4c22d7b8ee190b07f3c36ac4738dd0be3d98665adebcd33c4a"
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.11/VYRON.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1VmR2VCTTk0TmpaZ0ZNeGl4bXloRzZsQldiUmo5MS8xR09qL0V0c2lybkVjcGdRL0RrWEVxZG01RGc0QjFQSFBhTTVBL2N5ZE5WMnVwYVNoNUJUbEE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODkyODM5CWZpbGU6VllST04uYXBwLnRhci5negphb3gwcm9WckxxYlNKdDVIQi9lV1FDdzhiaml6T1NFZWdTSkl0ZmtxcDljU1p1YzRYYTZoQTJjRE5oeFEwQi9aU3pRNjl6REVlMHE0clVlb3dtemNCQT09Cg==",
+      "sha256": "4277cda78e44865b7f2a80279fc23523f6ab30c0753413b56f3407461642425e"
     }
   }
 }
