@@ -1,12 +1,12 @@
 {
-  "version": "6.1.12",
-  "notes": "VYRON 6.1.12 — configurable YouTube publication interval ‘Каждые N дней’, per-channel interval persistence, correct 3-day scheduling (01 → 04 → 07 → 10 → 13), and production build fixes.",
-  "pub_date": "2026-10-20T08:19:38Z",
+  "version": "6.1.13",
+  "notes": "VYRON 6.1.13 — total remaining channel runway, ascending runway priority, coverage end dates, and production stability fixes.",
+  "pub_date": "2026-10-20T09:58:59Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.12/VYRON_6.1.12_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1h0Vlc5aTNVc1dpdmMxcUQ5ZzFWM0lTb1dpUnByUm5rM1cybTdrV1JLa3ZkUzlKdjhEdmNsam1SaXRmZEFrYUFzOGk2SWVka1FVQjdKcWtLVXZmRndFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDgzOTQ3CWZpbGU6VllST05fNi4xLjEyX3g2NC1zZXR1cC5leGUKeFBibnRWSVFVNjMrU2JMRW1KUUNJQVRSR3owb2xNZVJSOWwzSEErK3NJUm1pOHVSakxISHd0ekJGUmZXaUt3dzBBbU9jMFdmc2o5MkI4TzZ1d1VYQ0E9PQo=",
-      "sha256": "4e2c53a29ae6f45decd8f7161e201c0af71edeb0e64ae0654e779f8a5677bd91"
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.13/VYRON_6.1.13_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1NBTkRwblo5NXp3ZGlaNThWS0pQOHBhYkU0UnlUQ3dVUUVXeXZWSDN2a01DME1VUDZiVlIvY1VxUHpnOGtjSVplMGlNVnFmc1ZjUjZyY1FYQmJ2eGdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDkwMTg4CWZpbGU6VllST05fNi4xLjEzX3g2NC1zZXR1cC5leGUKQ3B4U3h0Qi9GVmJlUGZ3b1IrdSt4VXlJMHB0NkFqU0ozOG1WYy9adDhWOC91UGt4cTNhRThVeEdKNlNQWGM4aUQ0c2d0WHNUOVE5TDU1NmV4enpDQnc9PQo=",
+      "sha256": "98c222caa61205b351002e87023dee680850f6755998408e9bb347a74ba7bb8a"
     }
   }
 }
