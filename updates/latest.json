@@ -1,12 +1,12 @@
 {
-  "version": "6.1.11",
-  "notes": "VYRON 6.1.11 — Metadata Identity + Inventory Stability Hotfix (macOS)",
-  "pub_date": "2026-10-13T12:01:46Z",
+  "version": "6.1.12",
+  "notes": "VYRON 6.1.12 — configurable YouTube publication interval ‘Каждые N дней’, per-channel interval persistence, correct 3-day scheduling (01 → 04 → 07 → 10 → 13), and production build fixes.",
+  "pub_date": "2026-10-20T08:19:38Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.11/VYRON.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1VmR2VCTTk0TmpaZ0ZNeGl4bXloRzZsQldiUmo5MS8xR09qL0V0c2lybkVjcGdRL0RrWEVxZG01RGc0QjFQSFBhTTVBL2N5ZE5WMnVwYVNoNUJUbEE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODkyODM5CWZpbGU6VllST04uYXBwLnRhci5negphb3gwcm9WckxxYlNKdDVIQi9lV1FDdzhiaml6T1NFZWdTSkl0ZmtxcDljU1p1YzRYYTZoQTJjRE5oeFEwQi9aU3pRNjl6REVlMHE0clVlb3dtemNCQT09Cg==",
-      "sha256": "4277cda78e44865b7f2a80279fc23523f6ab30c0753413b56f3407461642425e"
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.12/VYRON.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2JSVkF6clE5TVRxNXBFVDFweWM5ajl2V2w3NzZXcjFPc1cxQzBmVUlyby9IdHRCQmJtSjVQN1o0WXNGSDNLakx4TWJPNzVTb2EzWTl5NmFBckdVUndVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDgzODE2CWZpbGU6VllST04uYXBwLnRhci5negpmSisxblpMREw5UEUvYjE0TjFqbjArZ1pkUmY2VjNteWo3VXRhdDBHWFdSS0FpRm1rbE8ybjFZdnBYTlpZNmNlbnVsUFZRZmJCTStrMGQyc1VDdWhEUT09Cg==",
+      "sha256": "5cc73879c6707bad7e98c5dacabb90e292c991d1e64e0b1eb9b37a69422d5a44"
     }
   }
 }
