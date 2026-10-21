@@ -1,12 +1,12 @@
 {
-  "version": "6.1.14",
-  "notes": "VYRON 6.1.14 fixes relocated completed-render discovery for global cleanup while preserving active-render, missing-render, containment, regular-file, and ambiguity safety gates.",
-  "pub_date": "2026-10-21T03:10:47Z",
+  "version": "6.1.15",
+  "notes": "VYRON 6.1.15 — Global Project Cleanup Hotfix (macOS)",
+  "pub_date": "2026-10-21T03:52:58Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.14/VYRON.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1lvZS9DaTVRTTE1V081YVdud29nYldqKzA4VlNqSEIvTVd6eGNWV0dacXlSak9Id0MxU0JkS3NTb0lFeVpvRnJzbWJrK3crWE9xRVk3KzdSUEJ4RXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTUyMDg1CWZpbGU6VllST04uYXBwLnRhci5negpXc0xWVGc0NUlRVTNqblRaYTJIT1dCZmlidzBIZ002S1I0VWppZ1ZHem43bE9PWVpDd2IvaGJiYTV3eWZJODMyTzJpMFdZM0Jiakw0MmIvbEY1NzNCQT09Cg==",
-      "sha256": "8c5899999494b60bba584d3f431abcc39888c81468b20e4921bce9310a7d0077"
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.15/VYRON.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM2JUZEorQjFaR3JoODYvSDhJRVk2L3hUejJTVTIvNktKTExJMWowZS9OWXNOSVQxWU1JK0x1T1grSDRnbkNTTDdIWEdLQWpKOFRwd0JzNTVjOHJtOFFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTU0NzIzCWZpbGU6VllST04uYXBwLnRhci5negpNNlZuNk9yOVpVL0V1RWJuUXRzNmpRNndCYkFlVVBVRHMvWk9EOFRGMUZIb3Q1YkFDVXlXdGFHT1MyNks4NlNvRmI5dmlnZmhkNWl1WlFkcGdGN0NBdz09Cg==",
+      "sha256": "107e89d03119b0b53096867e61c40560b50495cc2c8061b4502af3b2ba22b266"
     }
   }
 }
