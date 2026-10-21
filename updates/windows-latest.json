@@ -1,12 +1,12 @@
 {
-  "version": "6.1.13",
-  "notes": "VYRON 6.1.13 — total remaining channel runway, ascending runway priority, coverage end dates, and production stability fixes.",
-  "pub_date": "2026-10-20T09:58:59Z",
+  "version": "6.1.14",
+  "notes": "VYRON 6.1.14 fixes relocated completed-render discovery for global cleanup while preserving active-render, missing-render, containment, regular-file, and ambiguity safety gates.",
+  "pub_date": "2026-10-21T03:10:47Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.13/VYRON_6.1.13_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1NBTkRwblo5NXp3ZGlaNThWS0pQOHBhYkU0UnlUQ3dVUUVXeXZWSDN2a01DME1VUDZiVlIvY1VxUHpnOGtjSVplMGlNVnFmc1ZjUjZyY1FYQmJ2eGdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDkwMTg4CWZpbGU6VllST05fNi4xLjEzX3g2NC1zZXR1cC5leGUKQ3B4U3h0Qi9GVmJlUGZ3b1IrdSt4VXlJMHB0NkFqU0ozOG1WYy9adDhWOC91UGt4cTNhRThVeEdKNlNQWGM4aUQ0c2d0WHNUOVE5TDU1NmV4enpDQnc9PQo=",
-      "sha256": "98c222caa61205b351002e87023dee680850f6755998408e9bb347a74ba7bb8a"
+      "url": "https://github.com/ScaleUPPeisov/vyron-releases/releases/download/v6.1.14/VYRON_6.1.14_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQThWRGlmVlNFM1Z2N2xYejQzY28rdnZveUJpeTZQTm9ac3ZNRTFZU1Y0bXJYT0FQVFZXa2oxSXFNZHZyY3VJcGdOWlpKN0tQb0g1c0pnQmJ1Yk9RMVU5RElMWXVxOUFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTUyMDgwCWZpbGU6VllST05fNi4xLjE0X3g2NC1zZXR1cC5leGUKUTBMZ3ZhNkVMeVlLMFBkZzMzUFFaZFhLY2xQT09nbWlkQUtYbytyTEYyNlNPbWs0S2VzYTdXb0JwcStrdElLRVBJclRFTi9QZGltNnVaUjIwZDJpQ1E9PQo=",
+      "sha256": "98888c8b177521333cec4f5aaf3352dff0de8b858090f5c9b454631f0671cd73"
     }
   }
 }
