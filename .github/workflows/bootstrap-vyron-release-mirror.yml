@@ -1,21 +1,18 @@
 name: Bootstrap VYRON public release mirror
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/bootstrap-vyron-release-mirror.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
-
+  contents: read
 concurrency:
   group: bootstrap-vyron-release-mirror
   cancel-in-progress: false
 
 jobs:
   mirror:
+    # SECURITY FREEZE 2026-11-15: obsolete mirror must never rewrite Stable feed.
+    if: ${{ false }}
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
