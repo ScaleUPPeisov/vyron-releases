@@ -1,0 +1,33 @@
+name: VYRON release mirror freeze gate
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/**'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/**'
+
+permissions:
+  contents: read
+
+jobs:
+  verify-mirror-frozen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure old feed-mirror publisher remains disabled
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          text=Path('.github/workflows/bootstrap-vyron-release-mirror.yml').read_text()
+          header=text.split('\njobs:\n',1)[0]
+          assert '\n  workflow_dispatch:' in header, 'MISSING_MANUAL_TRIGGER'
+          assert '\n  push:' not in header, 'AUTOMATIC_MIRROR_TRIGGER_FORBIDDEN'
+          assert '  contents: read' in header, 'MIRROR_GITHUB_TOKEN_MUST_BE_READ_ONLY'
+          assert '  mirror:\n    # SECURITY FREEZE 2026-11-15:' in text, 'MIRROR_JOB_UNPROTECTED'
+          assert '    if: ' + '$' + '{{ false }}' in text, 'MIRROR_JOB_NOT_DISABLED'
+          print('LEGACY_RELEASE_MIRROR_FROZEN=PASS')
+          PY
